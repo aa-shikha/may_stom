@@ -1038,7 +1038,7 @@ function openDetailsModal(title, clickedCardImgSrc) {
     { title: "Peaky Blinders", poster: "peaky blinders.jpg" },
     { title: "The Mandalorian", poster: "The mandalorian.jpg" },
     { title: "Scam 1992", poster: "Scam 1992.jpg" },
-    { title: "Game of Thrones", poster: "gane of thrones.jpg" },
+    { title: "Game of Thrones", poster: "Gane of thrones.jpg" },
     { title: "Off Campus", poster: "off_campus.jpg" },
     { title: "Wednesday", poster: "wednesday.jpg" },
     { title: "Alice in Borderland", poster: "alice.jpg" },

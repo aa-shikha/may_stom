@@ -1648,20 +1648,22 @@ body {
     gap: 20px;
     flex-wrap: wrap;
 }
+/*==========================================================
+   🎬 CINEWAVE PREMIUM UNIFIED GRID PAGE & MOVIE CARD OVERHAUL
+   ========================================================== */
 
-/*===================== movies ===============*/
-
-/* Category Pill Filters Styling */
+/* Category Pill Filters Styling Base */
 .category-pill {
     background-color: rgba(42, 42, 54, 0.6);
     color: #bcbcce;
     border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 10px 22px;
-    font-size: 0.9rem;
+    padding: 8px 18px !important; 
+    font-size: 0.85rem !important;
     font-weight: 500;
     border-radius: 25px; 
     cursor: pointer;
     transition: all 0.25s ease;
+    flex-shrink: 0 !important;
 }
 
 .category-pill:hover {
@@ -1677,16 +1679,60 @@ body {
     box-shadow: 0 4px 12px rgba(229, 9, 20, 0.3);
 }
 
-#movies-page-grid .movie-card {
-    width: calc(20% - 16px); 
-    min-width: 200px;
+/* base filter row neat adjustment */
+.categories-filter-row {
+    padding: 10px 4% 20px 4% !important;
+    margin: 0 -4% 20px -4% !important; 
+    gap: 10px !important;
 }
 
-/*================== Tv shows =================*/
+/* Base Unified Grid Core Structure (Standard Cinematic look) */
+#movies-page-grid, 
+#tvshows-page-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 20px !important; 
+    justify-content: flex-start !important; /* Aligns items neatly from left */
+    padding: 0 4% !important;
+    margin-bottom: 50px !important;
+}
 
+/* 🔥 THE FIX: Combined layout properties without min-width bugs */
+#movies-page-grid .movie-card,
 #tvshows-page-grid .movie-card {
-    width: calc(20% - 16px);
-    min-width: 200px;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    width: calc(25% - 15px) !important; /* Fixed exactly 4 columns on standard desktop */
+    min-width: 0 !important; /* 🔥 Purane 200px wale jhanjhat ko jad se mita diya */
+    aspect-ratio: 2 / 3 !important; /* Netflix-style standard vertical poster ratio */
+    border-radius: 12px !important; 
+    overflow: hidden !important; /* Dynamic image cropping safety box */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4) !important;
+    background: #141414 !important;
+    transition: all 0.25s ease;
+}
+
+/* Card image optimization and dynamic standard cropping logic */
+#movies-page-grid .movie-card img,
+#tvshows-page-grid .movie-card img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Automatic dynamic center cropping layer */
+    border-radius: 12px !important;
+}
+
+/* Card details hidden inside grids for ultra clean look */
+#movies-page-grid .movie-card .card-body,
+#tvshows-page-grid .movie-card .card-body {
+    display: none !important; 
+}
+
+/* Hover dynamic micro scaling */
+#movies-page-grid .movie-card:hover,
+#tvshows-page-grid .movie-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6) !important;
 }
 /* ==========================================================================
     MOBILE & TABLET RESPONSIVE NAVBAR & AUTH CODE LAYER
@@ -2400,7 +2446,7 @@ body {
         font-size: 0.95rem !important;
     }
 
-    /* ❓ FAQ ACCORDION MATRIX MOBILE OPTIMIZATION */
+    /*  FAQ ACCORDION MATRIX MOBILE OPTIMIZATION */
     .faq-section {
         padding: 40px 5% !important;
     }
@@ -2552,56 +2598,86 @@ body {
         font-size: 0.9rem !important;
     }
 }
-    /* ==========================================================
-        MOVIES & TV SHOWS GRID PAGE RESPONSIVE MATRIX
-       ========================================================== */
-    
-   
-    .categories-filter-row, 
-    .category-pills-container {
-        display: flex !important;
-        gap: 10px !important;
-        overflow-x: auto !important; 
-        white-space: nowrap !important;
-        padding: 5px 4% 15px 4% !important;
-        margin: 0 -4% 15px -4% !important; 
-        scroll-behavior: smooth;
-    }
+/* ==========================================================
+   🎬 MOVIES & TV SHOWS GRID PAGE RESPONSIVE MATRIX (PERFECT FIXED)
+   ========================================================== */
 
-    .categories-filter-row::-webkit-scrollbar,
-    .category-pills-container::-webkit-scrollbar {
-        display: none !important;
-    }
+/* 🌍 BASE DESKTOP/TABLET STYLE */
+.categories-filter-row, 
+.category-pills-container {
+    display: flex !important;
+    gap: 10px !important;
+    overflow-x: auto !important; 
+    white-space: nowrap !important;
+    padding: 5px 4% 15px 4% !important;
+    margin: 0 -4% 15px -4% !important; 
+    scroll-behavior: smooth;
+}
 
-    .category-pill {
-        padding: 8px 16px !important; 
-        font-size: 0.85rem !important;
-        flex-shrink: 0 !important; 
-    }
+.categories-filter-row::-webkit-scrollbar,
+.category-pills-container::-webkit-scrollbar {
+    display: none !important;
+}
 
-    
-    #movies-page-grid, 
-    #tvshows-page-grid {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        gap: 15px !important;
-        justify-content: center !important;
-        padding: 0 4% !important;
-    }
+.category-pill {
+    padding: 8px 16px !important; 
+    font-size: 0.85rem !important;
+    flex-shrink: 0 !important; 
+}
 
+#movies-page-grid, 
+#tvshows-page-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 20px !important; /* Spacing thodi neat rakhi */
+    justify-content: flex-start !important; /* Left se clean alignment */
+    padding: 0 4% !important;
+}
+
+/* 💻 DESKTOP VIEW: Perfect Premium 4-Columns Layout with Standard Aspect Ratio */
+#movies-page-grid .movie-card,
+#tvshows-page-grid .movie-card {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    width: calc(25% - 15px) !important; /* 🔥 FIXED: Desktop par ek row me exact 4 cards standard size ke rahenge */
+    min-width: 0 !important; /* Purane saare min-width bugs clear */
+    aspect-ratio: 2 / 3 !important; /* Netflix-style smooth vertical poster ratio */
+    border-radius: 12px !important; 
+    overflow: hidden !important; /* Extra images auto-crop ho jayengi */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4) !important;
+    background: #141414 !important;
+    transition: all 0.25s ease;
+}
+
+/* Images cropping core logic for Desktop & Mobile */
+#movies-page-grid .movie-card img,
+#tvshows-page-grid .movie-card img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Image ko bina stretch kiye center crop rakhega */
+    border-radius: 12px !important;
+}
+
+#movies-page-grid .movie-card .card-body,
+#tvshows-page-grid .movie-card .card-body {
+    display: none !important; /* Layout ultra-clean rakhne ke liye tags hide kiye */
+}
+
+#movies-page-grid .movie-card:hover,
+#tvshows-page-grid .movie-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* ==========================================================
+   📱 PURE MOBILE TUNING (ONLY APPLIES ON SMALL SCREENS)
+   ========================================================== */
+@media (max-width: 576px) {
+    /* 🔥 MOBILE VIEW: Tight 2-Columns layout */
     #movies-page-grid .movie-card,
     #tvshows-page-grid .movie-card {
-        width: calc(33.33% - 10px) !important;
-        min-width: 150px !important; 
-        height: 230px !important;
-    }
-
-   
-    #movies-page-grid .movie-card,
-    #tvshows-page-grid .movie-card {
-        width: calc(50% - 8px) !important; 
-        min-width: 130px !important;
-        height: 200px !important; 
+        width: calc(50% - 8px) !important; /* Mobile screen par exact 2 columns screen fit */
         border-radius: 8px !important;
     }
 
@@ -2609,3 +2685,4 @@ body {
         padding: 6px 14px !important;
         font-size: 0.8rem !important;
     }
+}

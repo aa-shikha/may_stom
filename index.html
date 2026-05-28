@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineWave - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <div id="navbar-container"></div>
+
+
+  
+    
+    <div id="search-results-section" style="display: none; background-color: #111; padding: 110px 4% 40px 4%; min-height: 100vh; color: #fff;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #222; padding-bottom: 15px; margin-bottom: 30px;">
+            <h2 style="font-size: 2rem; font-weight: 600; margin: 0; color: #fff;">
+                Search Results for: <span id="search-query-text" style="color: #e50914;">""</span>
+            </h2>
+            <button id="clear-search-btn" style="background: none; border: none; color: #aaa; font-size: 32px; cursor: pointer; transition: color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#aaa'">&times;</button>
+        </div>
+        
+        <div id="search-cards-container" class="movies-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; width: 100%;">
+            </div>
+    </div>
+    
+   
+
+
+    
+    <div id="main-content-body">
+
+        <div class="hero-slider">
+            
+            <div class="slide active" data-movie="Inception" style="background-image: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%), url('inception-hero.avif');">
+                <div class="hero-content">
+                    <h1 class="movie-title">Inception</h1>
+                    <div class="movie-meta">
+                        <span class="rating"><i class="fa-solid fa-star"></i> 8.8</span>
+                        <span>2010</span>
+                        <span>2h 32m</span>
+                        <span>Action • Sci-Fi</span>
+                    </div>
+                    <p class="movie-desc">A thief who steals corporate secrets through dream-sharing technology is given the inverse task of planting an idea into the mind of a CEO.</p>
+                    <div class="hero-buttons">
+                        <button class="play-btn"><i class="fa-solid fa-play"></i> Play</button>
+                        <button class="info-btn"><i class="fa-solid fa-circle-info"></i> More Info</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide" data-movie="Avengers: Endgame" style="background-image: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%), url('avengers_hero.jpeg');">
+                <div class="hero-content">
+                    <h1 class="movie-title">Avengers</h1>
+                    <div class="movie-meta">
+                        <span class="rating"><i class="fa-solid fa-star"></i> 8.8</span>
+                        <span>2019</span>
+                        <span>3h 02m</span>
+                        <span>Sci-Fi • Adventure</span>
+                    </div>
+                    <p class="movie-desc">After the devastating events of Infinity War, the Avengers assemble once more to reverse Thanos' actions and restore balance.</p>
+                    <div class="hero-buttons">
+                        <button class="play-btn"><i class="fa-solid fa-play"></i> Play</button>
+                        <button class="info-btn"><i class="fa-solid fa-circle-info"></i> More Info</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide" data-movie="Dune: Part Two" style="background-image: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%), url('Dune-hero.webp');">
+                <div class="hero-content">
+                    <h1 class="movie-title">Dune: Part Two</h1>
+                    <div class="movie-meta">
+                        <span class="rating"><i class="fa-solid fa-star"></i> 8.6</span>
+                        <span>2024</span>
+                        <span>2h 46m</span>
+                        <span>Adventure • Sci-Fi</span>
+                    </div>
+                    <p class="movie-desc">Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators who destroyed his family.</p>
+                    <div class="hero-buttons">
+                        <button class="play-btn"><i class="fa-solid fa-play"></i> Play</button>
+                        <button class="info-btn"><i class="fa-solid fa-circle-info"></i> More Info</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide" data-movie="Oppenheimer" style="background-image: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%), url('oppenheimer_hero.jpg');">
+                <div class="hero-content">
+                    <h1 class="movie-title">Oppenheimer</h1>
+                    <div class="movie-meta">
+                        <span class="rating"><i class="fa-solid fa-star"></i> 8.3</span>
+                        <span>2023</span>
+                        <span>3h 0m</span>
+                        <span>Biography • Drama</span>
+                    </div>
+                    <p class="movie-desc">The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb during World War II.</p>
+                    <div class="hero-buttons">
+                        <button class="play-btn"><i class="fa-solid fa-play"></i> Play</button>
+                        <button class="info-btn"><i class="fa-solid fa-circle-info"></i> More Info</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide" data-movie="The Dark Knight" style="background-image: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%), url('thedk_hero.jpg');">
+                <div class="hero-content">
+                    <h1 class="movie-title">The dark Knight</h1>
+                    <div class="movie-meta">
+                        <span class="rating"><i class="fa-solid fa-star"></i> 9.0</span>
+                        <span>2008</span>
+                        <span>2h 32m</span>
+                        <span>Action • Thriller</span>
+                    </div>
+                    <p class="movie-desc">When the menace known as the Joker wreaks havoc on Gotham, Batman must accept one of the greatest psychological tests of his ability to fight injustice.</p>
+                    <div class="hero-buttons">
+                        <button class="play-btn"><i class="fa-solid fa-play"></i> Play</button>
+                        <button class="info-btn"><i class="fa-solid fa-circle-info"></i> More Info</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide" data-movie="Pathaan" style="background-image: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%), url('Pathaan__hero.jpg');">
+                <div class="hero-content">
+                    <h1 class="movie-title">Pathaan</h1>
+                    <div class="movie-meta">
+                        <span class="rating"><i class="fa-solid fa-star"></i> 8.7</span>
+                        <span>2023</span>
+                        <span>2h 16m</span>
+                        <span>Action • Thriller</span>
+                    </div>
+                    <p class="movie-desc">A Pakistani general hires a private terror outfit to conduct attacks in India while Pathaan, an Indian secret agent, is on a mission to form a special unit.</p>
+                    <div class="hero-buttons">
+                        <button class="play-btn"><i class="fa-solid fa-play"></i> Play</button>
+                        <button class="info-btn"><i class="fa-solid fa-circle-info"></i> More Info</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide" data-movie="Mirzapur" style="background-image: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%), url('mirzapur_hero.jpg');">
+                <div class="hero-content">
+                    <h1 class="movie-title">Mirzapur</h1>
+                    <div class="movie-meta">
+                        <span class="rating"><i class="fa-solid fa-star"></i> 8.7</span>
+                        <span>2018</span>
+                        <span>Series</span>
+                        <span>3 Seasons</span>
+                        <span>Action • Drama</span>
+                    </div>
+                    <p class="movie-desc">Akhandanand Tripathi made millions exporting carpets and became the mafia boss of Mirzapur. His son Munna, an unworthy, power-hungry heir, stops at nothing to continue his father's legacy.</p>
+                    <div class="hero-buttons">
+                        <button class="play-btn"><i class="fa-solid fa-play"></i> Play</button>
+                        <button class="info-btn"><i class="fa-solid fa-circle-info"></i> More Info</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide" data-movie="The Family Man" style="background-image: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%), url('Thefman_hero.webp');">
+                <div class="hero-content">
+                    <h1 class="movie-title">The Family Man</h1>
+                    <div class="movie-meta">
+                        <span class="rating"><i class="fa-solid fa-star"></i> 8.6</span>
+                        <span>2019</span>
+                        <span>Series</span>
+                        <span>3 Seasons</span>
+                        <span>Thriller • Action</span>
+                    </div>
+                    <p class="movie-desc">Srikant Tiwari is a middle-class man who also serves as a world-class spy; he tries to balance his familial responsibilities with those at the highly secretive special cell of the National Intelligence Agency.</p>
+                    <div class="hero-buttons">
+                        <button class="play-btn"><i class="fa-solid fa-play"></i> Play</button>
+                        <button class="info-btn"><i class="fa-solid fa-circle-info"></i> More Info</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slider-indicators">
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+            </div>
+        </div>
+   
+<section class="movies-section">
+    <div class="section-header">
+        <h2 class="section-title">Trending Now</h2>
+        <span class="badge-hot">HOT</span>
+    </div>
+
+    <div class="movies-wrapper">
+        <button class="scroll-btn prev-btn"><i class="fa-solid fa-chevron-left"></i></button>
+
+        <div class="movies-container">
+            <div class="movie-card">
+                <img src="dhurnder.jpg" alt="Dhurandhar" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Dhurandhar</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.0</span>
+                        <span>2026</span>
+                        <span>3h 52m</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="money heist.jpg" alt="Money Heist" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Money Heist</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.2</span>
+                        <span>2017</span>
+                        <span>5 Seasons</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="romeo.jpg" alt="O'Romeo" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">O'Romeo</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 7.5</span>
+                        <span>2026</span>
+                        <span>2h 55m</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="Stranger Things.jpg" alt="Stranger Things" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Stranger Things</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.7</span>
+                        <span>2016</span>
+                        <span>5 Season</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="wednesday.jpg" alt="wednesday" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Wednesday</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.1</span>
+                        <span>2022</span>
+                        <span>2 Season</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="off_campus.jpg" alt="Off Campus" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Off Campus</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 7.4</span>
+                        <span>2026</span>
+                        <span>1 Season</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="gangu.jpg" alt="gangu" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Gangubai Kathiawadi</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 7.0</span>
+                        <span>2022</span>
+                        <span>2h 34m</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="scroll-btn next-btn"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+</section>
+<section class="movies-section top-picks-section">
+    <div class="section-header">
+        <h2 class="section-title">Top Picks for You</h2>
+        <span class="badge-hot">CURATED</span>
+        
+    </div>
+
+    <div class="movies-wrapper">
+        <button class="scroll-btn prev-btn"><i class="fa-solid fa-chevron-left"></i></button>
+
+        <div class="movies-container">
+            
+            <div class="movie-card">
+                <img src="Inception.webp" alt="Inception" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Inception</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.8</span>
+                        <span>2010</span>
+                        <span>2h 28m</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="the dark knight.webp" alt="The Dark Knight" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">The Dark Knight</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 9.0</span>
+                        <span>2008</span>
+                        <span>2h 32m</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="Interstellar.webp" alt="Interstellar" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Interstellar</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.7</span>
+                        <span>2014</span>
+                        <span>2h 49m</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="peaky blinders.jpg" alt="Peaky Blinders " class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Peaky Blinders </h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.4</span>
+                        <span>2013</span>
+                        <span>6 Seasons</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="Dune.webp" alt="Dune" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Dune: Part Two</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.6</span>
+                        <span>2024</span>
+                        <span>2h 46m</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+              <div class="movie-card">
+                <img src="alice.jpg" alt="Alice in Borderland" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Alice in Borderland</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.0</span>
+                        <span>2020</span>
+                        <span>3 Seasons</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+             <div class="movie-card">
+                <img src="Breaking bad.jpg" alt="Breaking Bad" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Breaking Bad</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 9.0</span>
+                        <span>2008</span>
+                        <span>5 Seasons</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="3 idiots.jpg" alt="3 idiots" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">3 Idiots</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.4</span>
+                        <span>2009</span>
+                        <span>2h 50m</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="Stranger Things.jpg" alt="Stranger Things" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Stranger Things</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.7</span>
+                        <span>2016</span>
+                        <span>5 Seasons</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="scroll-btn next-btn"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+</section>
+
+<section class="movies-section action-adventure-section">
+    <div class="section-header">
+        <h2 class="section-title">Action & Adventure</h2>
+    </div>
+
+    <div class="movies-wrapper">
+        <button class="scroll-btn prev-btn"><i class="fa-solid fa-chevron-left"></i></button>
+
+        <div class="movies-container">
+
+            <div class="movie-card">
+                <img src="Avengers.webp" alt="Avengers: Endgame" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Avengers: Endgame</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.4</span>
+                        <span>2019</span>
+                        <span>3h 1m</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="movie-card">
+                <img src="Gane of thrones.jpg" alt="Game of Thrones" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Game of Thrones</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 9.2</span>
+                        <span>2011</span>
+                        <span>8 Seasons</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="Spider Man.jpg" alt="Spider-Man: No Way Home" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Spider-Man: No Way Home</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.1</span>
+                        <span>2021</span>
+                        <span>2h 28m</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="Avatar.jpg" alt="Avatar: The Way of Water" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Avatar: The Way of Water</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.8</span>
+                        <span>2022</span>
+                        <span>3h 12m</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="mission.jpg" alt="Mission: Impossible - Fallout" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Mission: Impossible - Fallout</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.7</span>
+                        <span>2018</span>
+                        <span>2h 27m</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="Jawan.webp" alt="Jawan" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Jawan</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 7.0</span>
+                        <span>2023</span>
+                        <span>2h 49m</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="the dark knight.webp" alt="The Dark Knight" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">The Dark Knight</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.3</span>
+                        <span>2008</span>
+                        <span>2h 32m</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="fighter.jpg" alt="Fighter" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Fighter</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 6.9</span>
+                        <span>2024</span>
+                        <span>2h 46m</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="all of us.webp" alt="All of Us Are Dead" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">All of Us Are Dead</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 7.5</span>
+                        <span>2022</span>
+                        <span>1 Season</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="movie-card">
+                <img src="RRR.jpg" alt="RRR" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">RRR</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 7.8</span>
+                        <span>2022</span>
+                        <span>3h 2m</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="alice.jpg" alt="Alice in Borderland" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Alice in Borderland</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.7</span>
+                        <span>2020</span>
+                        <span>3 Seasons</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="Gane of thrones.jpg" alt="Game of Thrones" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Game of Thrones</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 9.0</span>
+                        <span>2011</span>
+                        <span>8 Seasons</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="john_wick.jpg" alt="John Wick" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">John Wick</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.6</span>
+                        <span>2014</span>
+                        <span>1h 41m</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="Pathaan__hero.jpg" alt="Pathaan" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Pathaan</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 5.9</span>
+                        <span>2023</span>
+                        <span>2h 26m</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="mad_max.jpg" alt="Mad Max" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Mad Max: Fury Root</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.2</span>
+                        <span>2015</span>
+                        <span>2h 00m</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="scroll-btn next-btn"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+</section>
+
+<section class="movies-section drama-spotlight-section">
+    <div class="section-header">
+        <h2 class="section-title">Drama Spotlight</h2>
+    </div>
+
+    <div class="movies-wrapper">
+        <button class="scroll-btn prev-btn"><i class="fa-solid fa-chevron-left"></i></button>
+
+        <div class="movies-container">
+            
+            <div class="movie-card">
+                <img src="peaky blinders.jpg" alt="Peaky Blinders" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Peaky Blinders</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 9.3.</span>
+                        <span>2013</span>
+                        <span>6 Seasons</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+               <div class="movie-card">
+                <img src="Gane of thrones.jpg" alt="Game of Thrones" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Game of Thrones</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 9.2</span>
+                        <span>2011</span>
+                        <span>8 Seasons</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="money heist.jpg" alt="Money Heist" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Money Heist</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.2</span>
+                        <span>2017</span>
+                        <span>5 Seasons</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+             <div class="movie-card">
+                <img src="mirzapur.jpg" alt="Mirzapur" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Mirzapur</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.5</span>
+                        <span>2018</span>
+                        <span>3 Seasons</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="Breaking bad.jpg" alt="Breaking Bad" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Breaking Bad</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 9.0</span>
+                        <span>2008</span>
+                        <span>5 Seasons</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="the family man.jpg" alt="The Family Man" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">The Family Man</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.7</span>
+                        <span>2019</span>
+                        <span>3 Seasons</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="Oppenheimer.webp" alt="Oppenheimer" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Oppenheimer</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.3</span>
+                        <span>2023</span>
+                        <span>3h 00m</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="romeo.jpg" alt="O'Romeo" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">O'Romeo</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 7.5</span>
+                        <span>2026</span>
+                        <span>2h 55m</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="3 idiots.jpg" alt="3 Idiots" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">3 Idiots</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.4</span>
+                        <span>2009</span>
+                        <span>2h 50m</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="Joker.jpg" alt="Joker" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Joker</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.6</span>
+                        <span>2019</span>
+                        <span>2h 2m</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="12th.jpg" alt="12th Fail" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">12th Fail</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.9</span>
+                        <span>2023</span>
+                        <span>2h 27m</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="Dangal.jpg" alt="Dangal" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Dangal</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.3</span>
+                        <span>2016</span>
+                        <span>2h 41m</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="from.jpg" alt="" clasFroms="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">From</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 7.9</span>
+                        <span>2022</span>
+                        <span>4 Seasons</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="Scam 1992.jpg" alt="Scam 1992" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Scam 1992</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.6</span>
+                        <span>2020</span>
+                        <span>2 Seasons</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="movie-card">
+                <img src="The Witcher.jpg" alt="The Witcher" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">The Witcher</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.4</span>
+                        <span>2019</span>
+                        <span>4 Seasons</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="scroll-btn next-btn"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+</section>
+
+<section class="movies-section scifi-beyond-section">
+    <div class="section-header">
+        <h2 class="section-title">Sci-Fi & Beyond</h2>
+    </div>
+
+    <div class="movies-wrapper">
+        <button class="scroll-btn prev-btn"><i class="fa-solid fa-chevron-left"></i></button>
+
+        <div class="movies-container">
+            
+            <div class="movie-card">
+                <img src="Blade.webp" alt="Blade Runner 2049" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Blade Runner 2049</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.7</span>
+                        <span>2017</span>
+                        <span>2h 43m</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="tenet.webp" alt="Tenet" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Tenet</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.8</span>
+                        <span>2020</span>
+                        <span>2h 30m</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="Stranger Things.jpg" alt="Stranger Things" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Stranger Things</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.7</span>
+                        <span>2016</span>
+                        <span>5 Seasons</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="Inception.webp" alt="Inception" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Inception</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.8</span>
+                        <span>2010</span>
+                        <span>2h 28m</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="Dune.webp" alt="Dune: Part Two" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Dune: Part Two</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.6</span>
+                        <span>2024</span>
+                        <span>2h 46m </span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="movie-card">
+                <img src="arrival.webp" alt="Arrival" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Arrival</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 7.9</span>
+                        <span>2016</span>
+                        <span>1h 56m</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="movie-card">
+                <img src="The mandalorian.jpg" alt="The Mandalorian" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">The Mandalorian</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.7</span>
+                        <span>2019</span>
+                        <span>3 Seasons</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="kalki.jpg" alt="kalki" class="card-img">
+                <div class="card-hover-info">
+                    <h3 class="card-title">Kalki 2898 AD</h3>
+                    <div class="card-meta">
+                        <span class="card-rating"><i class="fa-solid fa-star"></i> 8.3</span>
+                        <span>2024</span>
+                        <span>3h 1m</span>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-circle-btn"><i class="fa-solid fa-play"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-heart"></i></button>
+                        <button class="action-circle-btn"><i class="fa-solid fa-info"></i></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="scroll-btn next-btn"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+</section>
+
+<div id="trailer-modal" class="modal-overlay">
+    <div class="modal-content">
+        <button class="modal-close-btn">&times;</button>
+        <div class="video-container">
+            <iframe id="trailer-video" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+<div id="details-modal" class="modal-overlay">
+    <div class="details-modal-content">
+        <button class="details-close-btn">&times;</button>
+        <div class="details-modal-body">
+            <div class="details-left">
+                <img id="modal-movie-img" src="" alt="Movie Poster">
+            </div>
+            <div class="details-right">
+                <h1 id="modal-movie-title">Movie Title</h1>
+                
+                <div class="details-meta">
+                    <span class="details-rating"><i class="fa-solid fa-star"></i> <span id="modal-movie-rating">0.0</span></span>
+                    <span id="modal-movie-year">2000</span>
+                    <span id="modal-movie-duration">0h 00m</span>
+                </div>
+
+                <div class="details-genres" id="modal-movie-genres">
+                    </div>
+
+                <p id="modal-movie-desc" class="details-desc">Movie description goes here...</p>
+                
+                <p class="details-cast"><strong>Cast:</strong> <span id="modal-movie-cast">Actor names...</span></p>
+
+                <div class="details-rating-stars">
+                    <span>Your rating:</span>
+                    <div class="stars-row">
+                        <i class="fa-regular fa-star" data-value="1"></i>
+                        <i class="fa-regular fa-star" data-value="2"></i>
+                        <i class="fa-regular fa-star" data-value="3"></i>
+                        <i class="fa-regular fa-star" data-value="4"></i>
+                        <i class="fa-regular fa-star" data-value="5"></i>
+                    </div>
+                    <span class="rating-status">Not rated</span>
+                </div>
+
+                <div class="details-modal-btns">
+                    <button class="details-btn-play"><i class="fa-solid fa-play"></i> Play Trailer</button>
+                    <button class="details-btn-action btn-watchlist"><i class="fa-solid fa-plus"></i> In Watchlist</button>
+                    <button class="details-btn-action btn-like"><i class="fa-solid fa-heart"></i> Liked</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="plans-section">
+    <div class="plans-header">
+        <h1>Choose Your Plan</h1>
+        <p>Cancel anytime. Switch plans whenever you like.</p>
+    </div>
+
+    <div class="plans-container">
+        
+        <div class="plan-card mobile-card" data-plan-name="Mobile" data-plan-price="149">
+            <div class="card-body">
+                <h2 class="plan-title">Mobile</h2>
+                <div class="plan-price">
+                    <span class="currency">₹</span>149<span class="duration">/month</span>
+                </div>
+                <ul class="plan-features">
+                    <li><i class="fa-solid fa-circle-check"></i> Watch on mobile & tablet</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Good (480p) quality</li>
+                    <li><i class="fa-solid fa-circle-check"></i> 1 device at a time</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Unlimited movies & shows</li>
+                </ul>
+            </div>
+            <button class="plan-btn">Get Mobile</button>
+        </div>
+
+        <div class="plan-card standard-card popular" data-plan-name="Standard" data-plan-price="499">
+            <span class="badge popular-badge">POPULAR</span>
+            <div class="card-body">
+                <h2 class="plan-title">Standard</h2>
+                <div class="plan-price">
+                    <span class="currency">₹</span>499<span class="duration">/month</span>
+                </div>
+                <ul class="plan-features">
+                    <li><i class="fa-solid fa-circle-check"></i> Watch on all devices</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Full HD (1080p)</li>
+                    <li><i class="fa-solid fa-circle-check"></i> 2 devices at a time</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Downloads available</li>
+                </ul>
+            </div>
+            <button class="plan-btn active-btn">Get Standard</button>
+        </div>
+
+        <div class="plan-card premium-card best-value" data-plan-name="Premium" data-plan-price="799">
+            <span class="badge value-badge">BEST VALUE</span>
+            <div class="card-body">
+                <h2 class="plan-title">Premium</h2>
+                <div class="plan-price">
+                    <span class="currency">₹</span>799<span class="duration">/month</span>
+                </div>
+                <ul class="plan-features">
+                    <li><i class="fa-solid fa-circle-check"></i> Watch on all devices</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Ultra HD (4K) + HDR</li>
+                    <li><i class="fa-solid fa-circle-check"></i> 4 devices at a time</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Spatial audio + downloads</li>
+                </ul>
+            </div>
+            <button class="plan-btn">Get Premium</button>
+        </div>
+
+    </div>
+</section>
+
+<div id="payment-modal" class="payment-modal-overlay">
+    <div class="payment-modal-content">
+        <button id="close-payment-btn" class="payment-close-btn">&times;</button>
+        
+        <h2>Complete Your Subscription</h2>
+        <p class="selected-plan-summary">Selected Plan: <strong id="summary-plan-name">Standard</strong> (₹<span id="summary-plan-price">499</span>/month)</p>
+        
+        <form id="normal-checkout-form">
+            <div class="form-group">
+                <label for="user-name">Full Name</label>
+                <input type="text" id="user-name" required placeholder="Enter your full name">
+            </div>
+            
+            <div class="form-group">
+                <label for="user-email">Email Address</label>
+                <input type="email" id="user-email" required placeholder="name@example.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="card-number">Card Number / UPI ID</label>
+                <input type="text" id="card-number" required placeholder="1234 5678 9101 1121 or upi@handle">
+            </div>
+
+            <button type="submit" class="submit-payment-btn">Pay Now</button>
+        </form>
+    </div>
+</div>
+<section class="reviews-section">
+    <div class="reviews-header">
+        <h1>What Viewers Say</h1>
+        <p>Real feedback from real CineWave users.</p>
+    </div>
+
+    <div class="reviews-container" id="reviews-display-grid">
+        
+        <div class="review-card">
+            <div class="stars-row">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">"CineWave's streaming interface is incredibly smooth with zero buffering. Getting to experience world-class Hollywood and Bollywood content all in one place is amazing!"</p>
+            <div class="reviewer-info">
+                <div class="avatar gradient-1">R</div>
+                <div class="reviewer-details">
+                    <h3>Rohan Malhotra</h3>
+                    <p>Movie Buff</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="review-card highlighted-border">
+            <div class="stars-row">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">"I used to jump to YouTube just to check out movie trailers, but now they play directly inside the CineWave dashboard. This is an absolute masterclass in web design!"</p>
+            <div class="reviewer-info">
+                <div class="avatar gradient-2">K</div>
+                <div class="reviewer-details">
+                    <h3>Kriti Sharma</h3>
+                    <p>Series Lover</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <div class="stars-row">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+            </div>
+            <p class="review-text">"Clean UI, no ads, and the automatic trailer modal load-out system is mind-blowing. Premium look and feel for sure. Must try!"</p>
+            <div class="reviewer-info">
+                <div class="avatar gradient-3">A</div>
+                <div class="reviewer-details">
+                    <h3>Arjun Verma</h3>
+                    <p>Casual Viewer</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <div class="stars-row">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">"The 4K streaming trailers layout aur dynamic watchlist options are exactly what I wanted. Background rendering algorithms are exceptionally fast."</p>
+            <div class="reviewer-info">
+                <div class="avatar gradient-4">D</div>
+                <div class="reviewer-details">
+                    <h3>Divya Joshi</h3>
+                    <p>Cinephile</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="feedback-form-box">
+        <h2>Share Your Feedback</h2>
+        <p>Tell us what you love or what we can improve.</p>
+
+        <form id="cine-feedback-form">
+            <div class="input-inline-row">
+                <input type="text" id="fb-user-name" required placeholder="Your name">
+                <input type="email" id="fb-user-email" required placeholder="Email address">
+            </div>
+
+            <div class="star-rating-picker">
+                <span>Rate us:</span>
+                <div class="picker-stars" id="interactive-stars-box">
+                    <i class="fa-regular fa-star" data-index="1"></i>
+                    <i class="fa-regular fa-star" data-index="2"></i>
+                    <i class="fa-regular fa-star" data-index="3"></i>
+                    <i class="fa-regular fa-star" data-index="4"></i>
+                    <i class="fa-regular fa-star" data-index="5"></i>
+                </div>
+            </div>
+
+            <textarea id="fb-user-text" required placeholder="Your feedback..." rows="4"></textarea>
+
+            <div class="btn-submit-wrapper">
+                <button type="submit" class="fb-submit-btn">
+                    <i class="fa-solid fa-paper-plane"></i> Submit Feedback
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<section class="faq-section" id="home-faq-section">
+    <div class="faq-header">
+        <h1>Frequently Asked Questions</h1>
+        <p>Everything you need to know about CineWave subscriptions and streaming.</p>
+    </div>
+
+    <div class="faq-container">
+        
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>What is CineWave?</span>
+                <i class="fa-solid fa-plus faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+                <p>CineWave is a premium streaming platform that offers thousands of movies, web series, and exclusive trailers in stunning 4K Ultra HD resolution. You can watch as much as you want, anytime, completely ad-free.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>How much does CineWave cost?</span>
+                <i class="fa-solid fa-plus faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+                <p>Watch CineWave on your smartphone, tablet, Smart TV, or laptop, all for one fixed monthly fee. Plans range from ₹149 to ₹799 a month. No extra costs, no contracts.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>Can I cancel my subscription?</span>
+                <i class="fa-solid fa-plus faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+                <p>Yes, absolutely! CineWave is flexible. There are no annoying contracts and no commitments. You can easily cancel your account online in just two clicks. There are no cancellation fees – start or stop your account anytime.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>Where can I watch CineWave?</span>
+                <i class="fa-solid fa-plus faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+                <p>You can watch anywhere, anytime. Sign in with your CineWave account to watch instantly on the web at cinewave.com from your personal computer or on any internet-connected device, including smartphones, tablets, and streaming players.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span>Is CineWave good for kids?</span>
+                <i class="fa-solid fa-plus faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+                <p>Yes! Every subscription includes a dedicated Kids profile with PIN-protected parental controls, allowing you to restrict the maturity rating of content kids can watch and block specific titles you don’t want them to see.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="script.js"></script>
+
+</body>
+</html>

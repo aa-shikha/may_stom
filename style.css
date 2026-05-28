@@ -1,0 +1,2611 @@
+/* Google Font Import (Poppins)  */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; 
+}
+
+body {
+    background-color: #111; 
+    overflow-x: hidden;
+}
+/* ==========================================================================
+    DESKTOP BASE STYLING (TOP OF THE FILE)
+   ========================================================================== */
+
+.navbar {
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%); 
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background-color 0.4s ease, border-bottom 0.4s ease, backdrop-filter 0.4s ease;
+    border-bottom: none !important; 
+}
+
+.navbar.scrolled {
+    background: rgba(10, 10, 10, 0.95) !important; 
+    backdrop-filter: blur(10px); 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important; 
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 15px 4%; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+.logo a {
+    font-size: 28px;
+    font-weight: 800;
+    color: #ff0000; 
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px; 
+}
+
+.nav-links a {
+    color: #e5e5e5; 
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover { color: #ff0000; }
+.nav-links a.active { color: #ff0000; font-weight: 600; }
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-box input {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8px 15px 8px 35px; 
+    border-radius: 20px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    width: 220px;
+    transition: all 0.3s ease;
+}
+
+.search-box input::placeholder { color: #bbb; }
+
+.search-box input:focus {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: #ff0000;
+    width: 260px; 
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    color: #bbb;
+    font-size: 14px;
+    pointer-events: none;
+}
+
+.signin-btn {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.signin-btn:hover {
+    background-color: #cc0000; 
+    transform: scale(1.05); 
+}
+
+#auth-modal.modal-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background-color: rgba(0, 0, 0, 0.85) !important;
+    z-index: 9999 !important; 
+    display: none; 
+    justify-content: center !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+}
+
+#auth-modal.modal-overlay.open { display: flex !important; }
+
+.auth-container {
+    background-color: #1a1a24 !important;
+    border-radius: 12px !important;
+    width: 90% !important; 
+    max-width: 380px !important; 
+    padding: 25px !important;
+    position: relative !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6) !important;
+    box-sizing: border-box !important;
+    margin: 0 !important; 
+    transform: none !important;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.auth-container::-webkit-scrollbar { width: 5px; }
+.auth-container::-webkit-scrollbar-track { background: #14141b; border-radius: 10px; }
+.auth-container::-webkit-scrollbar-thumb { background: #2c2c3a; border-radius: 10px; }
+.auth-container::-webkit-scrollbar-thumb:hover { background: #ff333d; }
+
+.auth-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #8c8c9e;
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 10;
+}
+.auth-close-btn:hover { color: #fff; }
+
+.auth-tabs { display: flex; background-color: #0f0f14; border-radius: 8px; padding: 4px; margin-bottom: 15px; margin-top: 10px; }
+.tab-btn { flex: 1; background: none; border: none; color: #8c8c9e; padding: 8px; font-size: 0.9rem; font-weight: bold; cursor: pointer; border-radius: 6px; }
+.tab-btn.active { background-color: #ff333d; color: #fff; }
+
+.auth-box h2 { color: #fff; margin: 0 0 4px 0; font-size: 1.5rem; }
+.auth-box p { color: #8c8c9e; margin: 0 0 15px 0; font-size: 0.85rem; }
+.form-group { margin-bottom: 12px; display: flex; flex-direction: column; text-align: left;}
+.form-group label { color: #8c8c9e; font-size: 0.8rem; margin-bottom: 4px; }
+.form-group input { background-color: #0f0f14; border: 1px solid #2c2c3a; border-radius: 6px; padding: 10px; color: #fff; font-size: 0.9rem; outline: none; }
+.form-group input:focus { border-color: #ff333d; }
+
+.password-wrapper { position: relative; }
+.password-wrapper input { width: 100%; box-sizing: border-box; padding-right: 35px; }
+.toggle-password-visibility { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: #8c8c9e; cursor: pointer; font-size: 0.95rem; }
+
+.error-msg { color: #ff3333; font-size: 0.75rem; margin-top: 2px; min-height: 12px; }
+.auth-submit-btn { width: 100%; background-color: #ff333d; color: #fff; border: none; border-radius: 6px; padding: 11px; font-size: 0.95rem; font-weight: bold; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 5px; }
+.auth-footer-text { text-align: center; margin-top: 12px; font-size: 0.8rem; color: #8c8c9e; }
+.switch-link { color: #ff333d; cursor: pointer; font-weight: bold; }
+
+.user-avatar { width: 36px; height: 36px; background-color: #e50914; color: #fff; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: bold; font-size: 1.1rem; text-transform: uppercase; box-shadow: 0 2px 8px rgba(229, 9, 20, 0.4); user-select: none; }
+.logout-btn { background: none; border: none; color: #8c8c9e; font-size: 1.1rem; cursor: pointer; padding: 5px; transition: color 0.2s ease; }
+.logout-btn:hover { color: #ff333d; }
+/* ================== Hero Slider Styling & Zero-Gap Fix ====================== */
+.hero-slider {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    top: 0;
+}
+
+/* Hero Slide Individual Layer */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Strict image fitting layout */
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    
+    opacity: 0;
+    visibility: hidden; 
+    pointer-events: none;
+    
+    display: flex;
+    align-items: center;
+    padding: 0 4%; 
+    z-index: 1;
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out; 
+}
+
+.slide.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto;
+    z-index: 2;
+}
+
+/* Hero Content */
+.hero-content {
+    max-width: 650px;
+    color: #fff;
+    z-index: 5;
+    filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.95)); 
+    transform: translateY(20px);
+    transition: transform 0.8s ease;
+}
+
+.slide.active .hero-content {
+    transform: translateY(0);
+}
+
+.movie-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.movie-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    align-items: center;
+    color: #cccccc;
+
+}
+
+.movie-meta .rating {
+    color: #ffc107; 
+    font-weight: 700;
+}
+
+.movie-desc {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #e5e5e5;
+    margin-bottom: 30px;
+
+   
+}
+
+/* ==========================================================
+   UPDATED HERO SECTION BUTTONS STYLING
+   ========================================================== */
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.hero-buttons button {
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+/* White Play Button Styles */
+.play-btn {
+    background-color: #fff;
+    color: #000;
+}
+
+.play-btn:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.05); 
+}
+
+/* Translucent Grey More Info Button Styles */
+.info-btn {
+    background-color: rgba(109, 109, 110, 0.7);
+    color: #fff;
+}
+
+.info-btn:hover {
+    background-color: rgba(109, 109, 110, 0.4);
+    transform: scale(1.05); 
+}
+/* Bottom Progress Bars/Indicators  */
+.slider-indicators {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%); 
+    z-index: 10;
+    display: flex;
+    gap: 10px;
+}
+
+.indicator {
+    width: 40px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+    background-color: #ff0000; 
+}
+
+/* ================== treading Movie Rows Section Styling ====================== */
+.movies-section {
+    padding: 40px 0;
+    background-color: #111;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Header title with HOT badge */
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 4%; 
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+.badge-hot {
+    background-color: #ff0000;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+}
+
+/* Outer Wrapper for positioning arrow buttons */
+.movies-wrapper {
+    position: relative;
+    width: 100%;
+    padding: 0 4%;
+}
+
+/* Scroll Container - Mouse pad swipe dynamic feature */
+.movies-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; 
+    scroll-behavior: smooth;
+    padding: 15px 0;
+}
+
+/* Hide default scrollbars */
+.movies-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Individual Movie Card */
+.movie-card {
+    min-width: 240px; 
+    max-width: 240px;
+    height: 360px;
+    background-color: #222;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+    z-index: 1;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.4s ease;
+}
+
+/* Hover Details Box Overlay */
+.card-hover-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 0) 100%);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    opacity: 0; 
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* HOVER EFFECT TRIGGERS */
+.movie-card:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    z-index: 10; 
+}
+
+.movie-card:hover .card-img {
+    filter: brightness(0.7);
+}
+
+.movie-card:hover .card-hover-info {
+    opacity: 1; 
+    transform: translateY(0);
+}
+
+/* Card Text and Meta Details */
+.card-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.card-meta {
+    display: flex;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: #ccc;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.card-rating {
+    color: #ffc107;
+    font-weight: 700;
+}
+
+/* Circle buttons layout matching your screenshot */
+.card-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.action-circle-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background-color: rgba(42, 42, 42, 0.6);
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.action-circle-btn:hover {
+    background-color: #fff;
+    color: #000;
+    border-color: #fff;
+    transform: scale(1.1);
+}
+
+/* Slider Left/Right Hover Buttons */
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 15;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; 
+    transition: opacity 0.3s ease, background-color 0.2s ease;
+}
+
+.movies-wrapper:hover .scroll-btn {
+    opacity: 1; 
+}
+
+.scroll-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn { left: 0; border-radius: 0 5px 5px 0; }
+.next-btn { right: 0; border-radius: 5px 0 0 5px; }
+
+.drama-spotlight-section {
+    padding-top: 10px;
+    padding-bottom: 60px;
+}
+/* ================== Movie Details Modal Styling & Setup Fix ====================== */
+#details-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85); 
+    backdrop-filter: blur(12px); 
+    z-index: 9999 !important; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+/* JavaScript toggles this active class when clicked */
+#details-modal.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.details-modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 950px;
+    background-color: #181818; 
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transform: scale(0.85);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Open configuration smooth zoom effect scales back to normal */
+#details-modal.open .details-modal-content {
+    transform: scale(1);
+}
+
+.details-modal-body {
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+/* Left Side Layout */
+.details-left {
+    flex: 1;
+    min-width: 320px;
+    height: 500px; 
+}
+
+.details-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Right Side Layout */
+.details-right {
+    flex: 1.5;
+    min-width: 350px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(135deg, #181818 0%, #0f0f0f 100%);
+}
+
+#modal-movie-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: #fff;
+    letter-spacing: -1px;
+}
+
+.details-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #999;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.details-rating {
+    color: #ffc107;
+}
+
+/* Genre Tags Design */
+.details-genres {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.genre-tag {
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #ccc;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.details-desc {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #e1e1e1;
+    margin-bottom: 20px;
+}
+
+.details-cast {
+    font-size: 1rem;
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+.details-cast strong {
+    color: #fff;
+}
+
+/* Interactive Star Rating Layout */
+.details-rating-stars {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 35px;
+    color: #aaa;
+    font-size: 1rem;
+}
+
+.stars-row {
+    display: flex;
+    gap: 5px;
+    color: #444; 
+    cursor: pointer;
+}
+
+.stars-row i.active {
+    color: #ffc107; 
+}
+
+/* Modal Custom Action Buttons Grid system setup */
+.details-modal-btns {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.details-btn-play {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s ease;
+}
+
+.details-btn-play:hover {
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+.details-btn-action {
+    background-color: rgba(109, 109, 110, 0.3);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.details-btn-action:hover {
+    background-color: rgba(109, 109, 110, 0.5);
+}
+
+/* Active State Styles dynamically added via client logic scripts */
+.details-btn-action.active-watchlist {
+    background-color: #fff;
+    color: #000;
+    border-color: #fff;
+}
+
+.details-btn-action.active-liked {
+    background-color: #ff0000;
+    color: #fff;
+    border-color: #ff0000;
+}
+
+/* Modal Close Cross Button configuration placement */
+.details-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 40px;
+    cursor: pointer;
+    z-index: 10;
+    transition: color 0.2s ease;
+}
+
+.details-close-btn:hover {
+    color: #fff;
+}
+
+/* ==========================================================
+   5. TRAILER THEATER MODAL (CINEMATIC BIG SCREEN FIX)
+   ========================================================== */
+#trailer-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95); 
+    backdrop-filter: blur(15px); 
+    z-index: 10000 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+#trailer-modal.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#trailer-modal .modal-content {
+    position: relative;
+    width: 85%; 
+    max-width: 1100px; 
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(229, 9, 20, 0.2); 
+    transform: scale(0.85);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#trailer-modal.open .modal-content {
+    transform: scale(1);
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; 
+    height: 0;
+    background-color: #000;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ==========================================================
+   🎬 5. TRAILER THEATER MODAL (FULL OVERLAY & CROSS FIX)
+   ========================================================== */
+#trailer-modal.modal-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background-color: rgba(0, 0, 0, 0.92) !important; 
+    backdrop-filter: blur(15px);
+    z-index: 99999 !important; 
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+ 
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+/* Open configurations */
+#trailer-modal.modal-overlay.open {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+/* Center Content Core Box */
+#trailer-modal .modal-content {
+    position: relative !important;
+    width: 85% !important;
+    max-width: 1000px !important;
+    background: #000 !important;
+    border-radius: 12px !important;
+    overflow: visible !important; 
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+    transform: scale(0.85);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#trailer-modal.modal-overlay.open .modal-content {
+    transform: scale(1) !important;
+}
+
+/* Video Frame ratio 16:9 box */
+.video-container {
+    position: relative !important;
+    width: 100% !important;
+    padding-bottom: 56.25% !important;
+    height: 0 !important;
+    background-color: #000 !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+}
+
+.video-container iframe {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+}
+
+/* ==========================================================
+   🎯 CROSS CLOSE BUTTON DESKTOP MECHANICS (HIGH VISIBILITY)
+   ========================================================== */
+.modal-close-btn {
+    position: absolute !important;
+    top: -25px !important; 
+    right: -25px !important;
+    background: #e50914 !important; 
+    color: #ffffff !important;
+    border: none !important;
+    font-size: 32px !important;
+    width: 46px !important;
+    height: 46px !important;
+    border-radius: 50% !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+    z-index: 100000 !important; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5) !important;
+    transition: all 0.2s ease-in-out !important;
+}
+
+.modal-close-btn:hover {
+    background-color: #ff1f29 !important;
+    transform: scale(1.1) !important;
+}
+
+/* ==========================================================
+   📱 TRAILER MODAL MOBILE & TABLET RESPONSIVE TUNING
+   ========================================================== */
+@media (max-width: 768px) {
+    #trailer-modal .modal-content {
+        width: 92% !important;
+        margin-top: 40px !important;
+    }
+    
+    .modal-close-btn {
+        top: -55px !important; 
+        right: 0px !important;
+        width: 38px !important;
+        height: 38px !important;
+        font-size: 24px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    #trailer-modal .modal-content {
+        width: 96% !important;
+    }
+    .modal-close-btn {
+        top: -50px !important;
+        right: 5px !important;
+    }
+}
+
+/* ==========================================================
+   PLANS SECTION & ROW GRID DESIGN
+   ========================================================== */
+.plans-section {
+    padding: 60px 4%;
+    background-color: #111419;
+    color: #ffffff;
+    text-align: center;
+}
+
+.plans-header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.plans-header p {
+    color: #8c8c8c;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+.plans-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Base Pricing Card Setup */
+.plan-card {
+    background-color: #181d24;
+    border: 2px solid #232a35;
+    border-radius: 16px;
+    width: 320px; 
+    padding: 30px 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.plan-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Standard/Popular Box Highlight Accent */
+.plan-card.popular {
+    border-color: #e50914;
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.2);
+}
+
+/* Badges Top Elements */
+.badge {
+    position: absolute;
+    top: -14px;
+    right: 25px;
+    padding: 5px 14px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.popular-badge {
+    background-color: #e50914;
+    color: #fff;
+}
+
+.value-badge {
+    background-color: #e58e09;
+    color: #fff;
+}
+
+.plan-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.plan-price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.plan-price .currency {
+    font-size: 1.8rem;
+    margin-right: 5px;
+}
+
+.plan-price .duration {
+    font-size: 1rem;
+    color: #757575;
+    font-weight: 400;
+}
+
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 35px 0;
+    text-align: left;
+}
+
+.plan-features li {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: #d1d4dc;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.plan-features li i {
+    color: #2ecc71;
+    font-size: 1.1rem;
+}
+
+.plan-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #434955;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.plan-btn:hover {
+    background-color: #525a69;
+}
+
+.plan-btn.active-btn {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.plan-btn.active-btn:hover {
+    background-color: #e6e6e6;
+}
+
+/* ==========================================================
+   CHECKOUT POPUP MODAL OVERLAY (ESSENTIAL STYLES)
+   ========================================================== */
+.payment-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000; 
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/* JS Jab .open class add karega tabhi modal samne aayega */
+.payment-modal-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.payment-modal-content {
+    background-color: #181d24;
+    border: 1px solid #232a35;
+    padding: 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    color: #fff;
+    box-sizing: border-box;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.payment-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.selected-plan-summary {
+    background-color: rgba(229, 9, 20, 0.1);
+    border-left: 4px solid #e50914;
+    padding: 12px;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #b3b3b3;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    background-color: #222933;
+    border: 1px solid #333f50;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #e50914;
+}
+
+.submit-payment-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #e50914;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.submit-payment-btn:hover {
+    background-color: #c40812;
+}
+
+
+/* ==========================================================
+   REVIEWS & FEEDBACK WORKSPACE
+   ========================================================== */
+.reviews-section {
+    padding: 60px 4%;
+    background-color: #111419;
+    color: #ffffff;
+}
+
+.reviews-header {
+    text-align: center;       
+    display: flex;
+    flex-direction: column;
+    align-items: center;        
+    justify-content: center;
+    margin-bottom: 40px;      
+}
+
+.reviews-header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.reviews-header p {
+    color: #8c8c8c;
+    font-size: 1.1rem;
+}
+
+/* Reviews Grid Board */
+.reviews-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+/* Review Item Frame Card */
+.review-card {
+    background-color: #181d24;
+    border: 1px solid #232a35;
+    border-radius: 12px;
+    width: 310px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-3px);
+}
+
+.review-card.highlighted-border {
+    border-color: #e50914;
+}
+
+/* Star Vectors Formatting */
+.stars-row {
+    color: #f1c40f; 
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    text-align: left;
+    display: flex;
+    gap: 2px;
+}
+
+.review-text {
+    font-size: 0.95rem;
+    color: #d1d4dc;
+    line-height: 1.6;
+    font-style: italic;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* Reviewer Identity Block */
+.reviewer-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
+}
+
+/* Initial Avatar Gradient Blocks */
+.avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.gradient-1 { background: linear-gradient(135deg, #ff6b6b, #e50914); }
+.gradient-2 { background: linear-gradient(135deg, #feca57, #ff9f43); }
+.gradient-3 { background: linear-gradient(135deg, #48dbfb, #1dd1a1); }
+.gradient-4 { background: linear-gradient(135deg, #9c88ff, #3f51b5); }
+
+.reviewer-details h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.reviewer-details p {
+    font-size: 0.8rem;
+    color: #757575;
+    margin: 2px 0 0 0;
+}
+
+/* ==========================================================
+   FEEDBACK INPUT CONTAINER DESIGN
+   ========================================================== */
+.feedback-form-box {
+    background-color: #181d24;
+    border: 1px solid #232a35;
+    border-radius: 16px;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 40px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.feedback-form-box h2 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.feedback-form-box p {
+    color: #8c8c8c;
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+
+.input-inline-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.input-inline-row input, .feedback-form-box textarea {
+    width: 100%;
+    background-color: #0f1217;
+    border: 1px solid #232a35;
+    color: #fff;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+
+.input-inline-row input:focus, .feedback-form-box textarea:focus {
+    outline: none;
+    border-color: #e50914;
+}
+
+/* Interactive Feedback Rating Bar */
+.star-rating-picker {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.star-rating-picker span {
+    font-size: 1rem;
+    color: #b3b3b3;
+}
+
+.picker-stars {
+    display: flex;
+    gap: 6px;
+    color: #555; 
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+/* Hover/Selection Gold State */
+.picker-stars i.active, .picker-stars i.hover-state {
+    color: #f1c40f;
+}
+
+/* Submit Action Configurations */
+.btn-submit-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.fb-submit-btn {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.fb-submit-btn:hover {
+    background-color: #e6e6e6;
+}
+
+/* ==========================================================
+   FAQ ACCORDION MATRIX WORKSPACE
+   ========================================================== */
+.faq-section {
+    padding: 60px 4%;
+    background-color: #111419; 
+    color: #ffffff;
+}
+
+.faq-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.faq-header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.faq-header p {
+    color: #8c8c8c;
+    font-size: 1.1rem;
+}
+
+/* Accordion Outer Box Wrapper */
+.faq-container {
+    max-width: 850px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; 
+}
+
+/* Single FAQ Item Accordion Row */
+.faq-item {
+    background-color: #181d24;
+    border: 1px solid #232a35;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+}
+
+/* Question Action Button */
+.faq-question {
+    width: 100%;
+    padding: 22px 30px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+
+.faq-question:hover {
+    background-color: #1f2630;
+}
+
+/* FontAwesome Icon Vector Settings */
+.faq-icon {
+    font-size: 1.3rem;
+    color: #ffffff;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dynamic Panel Smooth Max-Height Controller Container */
+.faq-answer {
+    max-height: 0; 
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: #13171d; 
+}
+
+.faq-answer p {
+    padding: 25px 30px;
+    margin: 0;
+    font-size: 1rem;
+    color: #d1d4dc;
+    line-height: 1.6;
+    text-align: left;
+    border-top: 1px solid #1c222b;
+}
+
+/* ==========================================================
+   ACTIVE OPEN CONFIGURATIONS (TRIGGERED VIA JAVASCRIPT)
+   ========================================================== */
+.faq-item.active {
+    border-color: #e50914; 
+}
+
+/* Rotates the "+" icon into a smooth cross "×" (45-degree spin) */
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+
+/* ==========================================================
+   CINEWAVE PREMIUM FOOTER WORKSPACE
+   ========================================================== */
+.main-footer {
+    background-color: #0f1217;
+    padding: 60px 6% 30px 6%;
+    color: #a3a3a3;
+    border-top: 1px solid #1c222b;
+    box-sizing: border-box;
+}
+
+.footer-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+/* Brand Grid Customization */
+.footer-brand-col {
+    flex: 1;
+    min-width: 250px;
+    text-align: left;
+}
+
+.footer-logo {
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 0 0 15px 0;
+    letter-spacing: 0.5px;
+}
+
+.footer-logo span {
+    color: #e50914; 
+}
+
+.footer-tagline {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #8c8c8c;
+    margin-bottom: 20px;
+}
+
+/* Social Icon Circles */
+.footer-social-icons {
+    display: flex;
+    gap: 12px;
+}
+
+.footer-social-icons a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: #1c222b;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.footer-social-icons a:hover {
+    background-color: #e50914;
+    transform: translateY(-2px);
+}
+
+/* Column Links Standardized Navigation Matrices */
+.footer-links-col {
+    min-width: 140px;
+    text-align: left;
+}
+
+.footer-links-col h3 {
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+}
+
+.footer-links-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-links-col ul li a {
+    color: #8c8c8c;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-links-col ul li a:hover {
+    color: #ffffff;
+}
+
+/* Divider Line Formatting */
+.footer-divider {
+    border: 0;
+    height: 1px;
+    background-color: #1c222b;
+    margin-bottom: 30px;
+}
+
+/* Bottom Infrastructure Row Layout */
+.footer-bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/*===================== movies ===============*/
+
+/* Category Pill Filters Styling */
+.category-pill {
+    background-color: rgba(42, 42, 54, 0.6);
+    color: #bcbcce;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 10px 22px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 25px; 
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.category-pill:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.category-pill.active {
+    background-color: #e50914; 
+    color: #fff;
+    border-color: #e50914;
+    box-shadow: 0 4px 12px rgba(229, 9, 20, 0.3);
+}
+
+#movies-page-grid .movie-card {
+    width: calc(20% - 16px); 
+    min-width: 200px;
+}
+
+/*================== Tv shows =================*/
+
+#tvshows-page-grid .movie-card {
+    width: calc(20% - 16px);
+    min-width: 200px;
+}
+/* ==========================================================================
+    MOBILE & TABLET RESPONSIVE NAVBAR & AUTH CODE LAYER
+   ========================================================================== */
+
+.hamburger-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    outline: none;
+    transition: color 0.3s ease;
+    z-index: 2005;
+}
+.hamburger-menu-btn:hover { color: #ff0000; }
+
+/*  1. TABLET LAYOUT ADJUSTMENTS */
+@media (max-width: 1024px) {
+    .nav-links { gap: 20px; }
+    .nav-links a { font-size: 16px; }
+    .search-box input { width: 150px; }
+}
+
+/*  2. MOBILE & SMALL TABLET BREAKPOINT (Max width: 768px) */
+@media (max-width: 768px) {
+    .hamburger-menu-btn {
+        display: block !important;
+        position: relative;
+        z-index: 2005;
+        padding: 5px;
+    }
+
+    .nav-container {
+        padding: 10px 4% !important; 
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important; 
+        width: 100%;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    .logo {
+        position: absolute !important;
+        left: 36% !important; 
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        margin: 0 !important;
+        z-index: 2001;
+    }
+    .logo a { font-size: 22px; font-weight: 800; }
+
+    /* HAMBURGER DRAWER ENGINE */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: -100%; 
+        width: 260px;
+        height: 100vh;
+        background-color: #0f0f14 !important; 
+        flex-direction: column; 
+        padding: 90px 30px;
+        gap: 20px;
+        z-index: 2000 !important; 
+        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 5px 0 25px rgba(0, 0, 0, 0.9);
+    }
+    .nav-links.open { left: 0 !important; }
+    .nav-links a { font-size: 18px; display: block; width: 100%; padding: 8px 0; }
+    .nav-right { 
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        gap: 15px !important; 
+        margin-left: auto !important; 
+        
+       
+        padding-right: 25px !important;  
+        margin-right: 10px !important; 
+        
+        z-index: 2001;
+        position: relative;
+    }
+  /* Mobile Search Layout Setup */
+    .search-box {
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    .search-box input {
+        width: 0px; 
+        padding: 6px 0px;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: transparent;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        border-radius: 20px;
+        z-index: 1; 
+        font-size: 12px;
+    }
+
+    .search-box input.active-expand,
+    .search-box input:focus {
+        width: 85px !important;
+        background: rgba(255, 255, 255, 0.12) !important;
+        border: 1px solid #ff0000 !important;
+        padding-left: 28px !important;
+        padding-right: 6px !important;
+        color: #fff !important;
+        cursor: text;
+    }
+
+    .search-icon {
+        position: absolute;
+        left: -15px; 
+        font-size: 1.1rem;
+        color: #fff;
+        pointer-events: auto !important; 
+        cursor: pointer;
+        transition: all 0.25s ease;
+        display: block !important;
+        z-index: 2; 
+    }
+
+    /* Siblings element state sync selector rules */
+    .search-box input.active-expand + .search-icon,
+    .search-box input:focus + .search-icon {
+        left: 8px !important;
+        color: #ff0000 !important;
+    }
+    .signin-btn {
+        padding: 6px 14px;
+        font-size: 13px;
+        white-space: nowrap; 
+        border-radius: 20px;
+    }
+    /* ==========================================================================
+   🔥 AUTH MODAL ABSOLUTE CENTERING SYSTEM (FIXED FOR ALL VIEWS)
+   ========================================================================== */
+
+#auth-modal.modal-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background-color: rgba(0, 0, 0, 0.85) !important;
+    z-index: 9999 !important; 
+    
+    /* Dynamic Centering Frame Matrix */
+    display: none; 
+    justify-content: center !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+}
+
+/* Jab framework status .open toggle karega to forcefully center flex layout chalega */
+#auth-modal.modal-overlay.open {
+    display: flex !important;
+}
+
+/* Container Engine System - Fits inside view frames perfectly */
+.auth-container {
+    background-color: #1a1a24 !important;
+    border-radius: 12px !important;
+    width: 90% !important; 
+    max-width: 380px !important; 
+    padding: 25px !important;
+    position: relative !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6) !important;
+    box-sizing: border-box !important;
+    
+    /* Margin issues reset */
+    margin: 0 !important; 
+    transform: none !important;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+/* 📱 2. MOBILE SPECIFIC OVERRIDES (Max width: 768px) */
+@media (max-width: 768px) {
+    #auth-modal.modal-overlay {
+        padding: 15px !important;
+    }
+    
+    .auth-container {
+        max-width: 340px !important; 
+        padding: 20px !important;
+    }
+}
+
+/*  3. ULTRA SMALL PHONES (Max width: 480px) */
+@media (max-width: 480px) {
+    .auth-container {
+        max-width: 300px !important; 
+        padding: 15px 18px !important;
+    }
+}
+    /* HERO SLIDER FIXED */
+    .hero-slider, .hero-slide { height: 65vh !important; min-height: 450px; }
+    .hero-content h1 { font-size: 2rem !important; }
+    .hero-content p { font-size: 0.85rem !important; line-height: 1.4; }
+}
+
+/*  3. ULTRA SMALL SCREEN CONFIGURATIONS */
+@media (max-width: 480px) {
+    
+    .logo {
+        left: 35% !important;
+    }
+    .logo a { font-size: 19px; }
+    .nav-container { padding: 10px 4%; }
+    
+    .nav-right { 
+        gap: 12px !important; 
+        padding-right: 10px !important; 
+        margin-right: 70px !important;
+    }
+    .signin-btn { padding: 6px 12px; font-size: 12px; }
+    .user-avatar { width: 30px; height: 30px; font-size: 0.95rem; }
+   
+}
+/* ==========================================================================
+   📱 RESPONSIVE MEDIA QUERIES (BOTTOM OF THE FILE)
+   ========================================================================== */
+
+.hamburger-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    outline: none;
+    z-index: 2005;
+}
+
+@media (max-width: 768px) {
+    .hamburger-menu-btn { display: block !important; position: relative; padding: 5px; }
+
+    .nav-container {
+        padding: 10px 4% !important; 
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important; 
+        width: 100%;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    .logo {
+        position: absolute !important;
+        left: 46% !important; 
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        margin: 0 !important;
+        z-index: 2001;
+    }
+    .logo a { font-size: 22px; font-weight: 800; }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: -100%; 
+        width: 260px;
+        height: 100vh;
+        background-color: #0f0f14 !important; 
+        flex-direction: column; 
+        padding: 90px 30px;
+        gap: 20px;
+        z-index: 2000 !important; 
+        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 5px 0 25px rgba(0, 0, 0, 0.9);
+    }
+    .nav-links.open { left: 0 !important; }
+    .nav-links a { font-size: 18px; display: block; width: 100%; padding: 8px 0; }
+
+    .nav-right { 
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        gap: 15px !important; 
+        margin-left: auto !important; 
+        padding-right: 25px !important;  
+        margin-right: 10px !important;  
+        z-index: 2001;
+        position: relative;
+    }
+    
+    .search-box { display: flex; align-items: center; position: relative; }
+    .search-box input {
+        width: 0px; padding: 6px 0px; background: transparent; border: none;
+        outline: none; color: transparent; cursor: pointer; transition: all 0.25s ease; border-radius: 20px; font-size: 12px;
+    }
+    .search-box input.active-expand, .search-box input:focus {
+        width: 85px !important; background: rgba(255, 255, 255, 0.12) !important;
+        border: 1px solid #ff0000 !important; padding-left: 28px !important; padding-right: 6px !important; color: #fff !important;
+    }
+    .search-icon {
+        position: absolute; left: -15px; font-size: 1.1rem; color: #fff;
+        pointer-events: auto !important; cursor: pointer; transition: all 0.25s ease; display: block !important; z-index: 2;
+    }
+    .search-box input.active-expand + .search-icon, .search-box input:focus + .search-icon { left: 8px !important; color: #ff0000 !important; }
+
+    .signin-btn { padding: 6px 14px; font-size: 13px; white-space: nowrap; border-radius: 20px; }
+    
+    /* Auth Modal Mobile Specific adjustments */
+    #auth-modal.modal-overlay { padding: 15px !important; }
+    .auth-container { max-width: 340px !important; padding: 20px !important; }
+}
+
+@media (max-width: 480px) {
+    .logo { left: 45% !important; }
+    .logo a { font-size: 19px; }
+    .nav-container { padding: 10px 4%; }
+    .nav-right { gap: 12px !important; padding-right: 20px !important; margin-right: 8px !important; }
+    .signin-btn { padding: 6px 12px; font-size: 12px; }
+    .auth-container { max-width: 300px !important; padding: 15px 18px !important; }
+}
+
+/* ==========================================================================
+    HERO SLIDER RESPONSIVE BREAKPOINTS (THE ULTIMATE MOBILE FIT)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .hero-slider {
+        height: 70vh !important;
+        min-height: 480px !important;
+    }
+
+    .slide {
+        padding: 0 6% !important;
+        align-items: flex-end !important;
+        padding-bottom: 60px !important;
+        background-position: center center !important;
+    }
+
+    .hero-content {
+        max-width: 100% !important;
+        transform: translateY(0) !important;
+    }
+
+    .movie-title {
+        font-size: 2.2rem !important;
+        margin-bottom: 10px !important;
+    }
+
+    .movie-meta {
+        gap: 12px !important;
+        font-size: 0.9rem !important;
+        margin-bottom: 15px !important;
+    }
+
+    .movie-desc {
+        font-size: 0.9rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 20px !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 3 !important;
+        line-clamp: 3 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+    }
+
+    .hero-buttons {
+        gap: 10px !important;
+    }
+
+    .hero-buttons button {
+        padding: 10px 20px !important;
+        font-size: 0.9rem !important;
+        border-radius: 4px !important;
+    }
+
+    .slider-indicators {
+        bottom: 15px !important;
+    }
+    
+    .indicator {
+        width: 25px !important;
+        height: 3px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-slider {
+        height: 65vh !important;
+        min-height: 420px !important;
+    }
+
+    .slide {
+        padding: 0 5% !important;
+        padding-bottom: 55px !important;
+    }
+
+    .movie-title {
+        font-size: 1.8rem !important;
+        font-weight: 700 !important;
+    }
+
+    .movie-meta {
+        font-size: 0.85rem !important;
+        margin-bottom: 12px !important;
+        gap: 8px !important;
+    }
+
+    .movie-desc {
+        font-size: 0.8rem !important;
+        line-height: 1.35 !important;
+        margin-bottom: 18px !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        line-clamp: 2 !important; 
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+    }
+
+    .hero-buttons button {
+        padding: 8px 15px !important;
+        font-size: 0.85rem !important;
+        gap: 6px !important;
+    }
+    
+    .slider-indicators {
+        bottom: 12px !important;
+        gap: 6px !important;
+    }
+    
+    .indicator {
+        width: 18px !important;
+    }
+}
+
+/* ==========================================================================
+ MOVIES ROW CARDS & DETAILS MODAL RESPONSIVE ENGINE (THE FINAL TOUCH)
+   ========================================================================== */
+
+/*  1. TABLET & MOBILE VIEWPORT BREAKPOINT (Max width: 768px) */
+@media (max-width: 768px) {
+    
+    /* MOVIES ROW CHANGES */
+    .movies-section { padding: 25px 0; }
+    .section-title { font-size: 1.3rem !important; }
+    
+    /* Left/Right scroll arrows ko mobile par hidden kiya kyuki user swipe karega */
+    .scroll-btn { display: none !important; } 
+    
+    .movies-wrapper { padding: 0 4% !important; }
+    .movies-container { gap: 12px !important; padding: 10px 0 !important; }
+
+    /* Compact Cards layout for small viewports */
+    .movie-card {
+        min-width: 160px !important; 
+        max-width: 160px !important;
+        height: 240px !important; 
+    }
+    .card-hover-info { padding: 12px !important; }
+    .card-title { font-size: 0.95rem !important; margin-bottom: 4px !important; }
+    .card-meta { font-size: 0.75rem !important; margin-bottom: 8px !important; gap: 6px !important; }
+    .action-circle-btn { width: 30px !important; height: 30px !important; font-size: 10px !important; }
+
+    /*  DETAILS MODAL CONTENT OVERHAUL */
+    .details-modal-content {
+        width: 92% !important;
+        max-height: 90vh !important;
+        overflow-y: auto !important; 
+    }
+
+    .details-modal-body {
+        flex-direction: column !important; 
+    }
+
+    .details-left {
+        width: 100% !important;
+        min-width: 100% !important;
+        height: 250px !important; 
+    }
+
+    .details-right {
+        width: 100% !important;
+        min-width: 100% !important;
+        padding: 20px !important; 
+        background: #181818 !important;
+    }
+
+    #modal-movie-title {
+        font-size: 1.8rem !important; 
+        letter-spacing: 0px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .details-meta {
+        font-size: 0.95rem !important;
+        gap: 10px !important;
+        margin-bottom: 12px !important;
+    }
+
+    .details-genres { margin-bottom: 15px !important; flex-wrap: wrap !important; }
+    .genre-tag { padding: 3px 10px !important; font-size: 0.75rem !important; }
+
+    .details-desc {
+        font-size: 0.9rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 15px !important;
+    }
+
+    .details-cast { font-size: 0.85rem !important; margin-bottom: 20px !important; }
+    .details-rating-stars { margin-bottom: 25px !important; font-size: 0.9rem !important; }
+
+    /* Interactive Action Buttons Wrap Grid */
+    .details-modal-btns { gap: 10px !important; }
+    .details-btn-play, .details-btn-action {
+        padding: 10px 20px !important;
+        font-size: 0.9rem !important;
+        flex: 1; 
+        justify-content: center;
+    }
+
+    /* Modal close button layout adjust */
+    .details-close-btn {
+        top: 10px !important;
+        right: 15px !important;
+        font-size: 32px !important;
+        background: rgba(0,0,0,0.5) !important; 
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        line-height: 36px;
+        text-align: center;
+    }
+}
+
+/* 📲 2. ULTRA SMALL PHONES CONFIGURATIONS (Max width: 480px) */
+@media (max-width: 480px) {
+    .movie-card {
+        min-width: 140px !important; 
+        max-width: 140px !important;
+        height: 210px !important; 
+    }
+
+    .details-left { height: 180px !important; } 
+    #modal-movie-title { font-size: 1.5rem !important; }
+    
+    .details-btn-play, .details-btn-action {
+        padding: 8px 12px !important;
+        font-size: 0.8rem !important;
+    }
+}
+
+/* ==========================================================================
+   📱 MOBILE & TABLET RESPONSIVE OVERHAUL (MAX-WIDTH: 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+
+    /* 🎬 TRAILER THEATER MODAL MOBILE OPTIMIZATION */
+    #trailer-modal .modal-content {
+        width: 95% !important; 
+        border-radius: 8px !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+    }
+
+    .modal-close-btn {
+        position: absolute !important;
+        top: -55px !important; 
+        right: 5px !important;
+        width: 38px !important;
+        height: 38px !important;
+        font-size: 22px !important;
+        background: rgba(20, 20, 20, 0.8) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    }
+
+    /* 💳 PLANS SECTION & CHECKOUT MODAL MOBILE OPTIMIZATION */
+    .plans-section {
+        padding: 40px 5% !important;
+    }
+
+    .plans-header h1 {
+        font-size: 1.8rem !important; 
+    }
+
+    .plans-header p {
+        font-size: 0.95rem !important;
+        margin-bottom: 25px !important;
+    }
+
+    .plans-container {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 25px !important; 
+    }
+
+    .plan-card {
+        width: 100% !important; 
+        max-width: 340px !important; 
+        padding: 25px 20px !important;
+    }
+
+    .plan-title { font-size: 1.4rem !important; }
+    .plan-price { font-size: 2.1rem !important; margin-bottom: 20px !important; }
+
+    .payment-modal-content {
+        width: 92% !important; 
+        padding: 25px 20px !important; 
+    }
+
+    .payment-close-btn {
+        top: 10px !important;
+        right: 15px !important;
+        font-size: 1.8rem !important;
+    }
+
+    .selected-plan-summary {
+        margin-bottom: 18px !important;
+        font-size: 0.85rem !important;
+    }
+
+    .form-group {
+        margin-bottom: 15px !important;
+    }
+
+    .form-group label {
+        margin-bottom: 6px !important;
+        font-size: 0.85rem !important;
+    }
+
+    .form-group input {
+        padding: 10px !important;
+        font-size: 0.95rem !important;
+    }
+
+    .submit-payment-btn {
+        padding: 12px !important;
+        font-size: 0.95rem !important;
+    }
+
+    /* 🌟 REVIEWS & FEEDBACK WORKSPACE MOBILE OPTIMIZATION */
+    .reviews-section {
+        padding: 40px 5% !important;
+    }
+
+    .reviews-header h1 {
+        font-size: 1.8rem !important;
+    }
+
+    .reviews-header p {
+        font-size: 0.95rem !important;
+    }
+
+    .reviews-container {
+        gap: 16px !important;
+        margin-bottom: 35px !important;
+    }
+
+    .review-card {
+        width: 100% !important; 
+        max-width: 340px !important; 
+        padding: 20px !important;
+    }
+
+    .feedback-form-box {
+        padding: 25px 20px !important; 
+        border-radius: 12px !important;
+    }
+
+    .feedback-form-box h2 {
+        font-size: 1.4rem !important;
+    }
+
+    .feedback-form-box p {
+        font-size: 0.9rem !important;
+        margin-bottom: 20px !important;
+    }
+
+    .input-inline-row {
+        flex-direction: column !important;
+        gap: 15px !important;
+        margin-bottom: 15px !important;
+    }
+
+    .input-inline-row input, .feedback-form-box textarea {
+        padding: 12px !important;
+        font-size: 0.9rem !important;
+    }
+
+    .star-rating-picker {
+        flex-direction: column !important; 
+        align-items: flex-start !important;
+        gap: 8px !important;
+        margin-bottom: 15px !important;
+    }
+
+    .star-rating-picker span {
+        font-size: 0.9rem !important;
+    }
+
+    .btn-submit-wrapper {
+        justify-content: center !important; 
+        margin-top: 15px !important;
+    }
+
+    .fb-submit-btn {
+        width: 100% !important; 
+        justify-content: center !important;
+        padding: 12px !important;
+        font-size: 0.95rem !important;
+    }
+
+    /* ❓ FAQ ACCORDION MATRIX MOBILE OPTIMIZATION */
+    .faq-section {
+        padding: 40px 5% !important;
+    }
+
+    .faq-header h1 {
+        font-size: 1.8rem !important; 
+    }
+
+    .faq-header p {
+        font-size: 0.95rem !important;
+        margin-bottom: 25px !important;
+    }
+
+    .faq-container {
+        gap: 10px !important; 
+    }
+
+    .faq-question {
+        padding: 16px 20px !important; 
+        font-size: 1rem !important; 
+    }
+
+    .faq-icon {
+        font-size: 1.1rem !important; 
+    }
+
+    .faq-answer p {
+        padding: 18px 20px !important; 
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+    }
+
+    /* 📺 CINEWAVE PREMIUM FOOTER MOBILE OPTIMIZATION */
+    .main-footer {
+        padding: 40px 5% 20px 5% !important; 
+    }
+
+    .footer-top-row {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 30px !important;
+        margin-bottom: 30px !important;
+    }
+
+    .footer-brand-col {
+        text-align: center !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 100% !important;
+    }
+
+    .footer-logo {
+        font-size: 1.6rem !important;
+    }
+
+    .footer-tagline {
+        font-size: 0.85rem !important;
+        max-width: 400px; 
+    }
+
+    .footer-links-col {
+        text-align: center !important;
+        min-width: 100% !important;
+    }
+
+    .footer-links-col h3 {
+        margin-bottom: 12px !important;
+        font-size: 1rem !important;
+    }
+
+    .footer-links-col ul li {
+        margin-bottom: 8px !important;
+    }
+
+    .footer-bottom-row {
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 12px !important;
+        text-align: center !important;
+        font-size: 0.8rem !important;
+    }
+}
+
+/* ==========================================================================
+   📲 ULTRA SMALL PHONES CONFIGURATIONS (MAX-WIDTH: 480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+    #trailer-modal .modal-content {
+        width: 100% !important; 
+        border-radius: 0px !important; 
+    }
+
+    .modal-close-btn {
+        top: -52px !important; 
+        right: 10px !important;
+    }
+
+    .plans-header h1 { font-size: 1.5rem !important; }
+    
+    .plan-card {
+        max-width: 100% !important; 
+        padding: 20px 15px !important;
+    }
+
+    .plan-price { font-size: 1.8rem !important; }
+
+    .payment-modal-content {
+        padding: 20px 15px !important;
+    }
+
+    .reviews-header h1 { font-size: 1.5rem !important; }
+    
+    .review-card {
+        max-width: 100% !important; 
+    }
+
+    .feedback-form-box {
+        padding: 20px 15px !important;
+    }
+
+    .faq-header h1 { 
+        font-size: 1.5rem !important; 
+    }
+    
+    .faq-question {
+        padding: 14px 15px !important; 
+        font-size: 0.95rem !important;
+    }
+
+    .faq-answer p {
+        padding: 15px 15px !important;
+        font-size: 0.85rem !important;
+    }
+
+    .main-footer {
+        padding: 35px 15px 20px 15px !important;
+    }
+
+    .footer-logo {
+        font-size: 1.4rem !important;
+    }
+
+    .footer-social-icons a {
+        width: 35px !important;
+        height: 35px !important;
+        font-size: 0.9rem !important;
+    }
+}
+    /* ==========================================================
+        MOVIES & TV SHOWS GRID PAGE RESPONSIVE MATRIX
+       ========================================================== */
+    
+   
+    .categories-filter-row, 
+    .category-pills-container {
+        display: flex !important;
+        gap: 10px !important;
+        overflow-x: auto !important; 
+        white-space: nowrap !important;
+        padding: 5px 4% 15px 4% !important;
+        margin: 0 -4% 15px -4% !important; 
+        scroll-behavior: smooth;
+    }
+
+    .categories-filter-row::-webkit-scrollbar,
+    .category-pills-container::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    .category-pill {
+        padding: 8px 16px !important; 
+        font-size: 0.85rem !important;
+        flex-shrink: 0 !important; 
+    }
+
+    
+    #movies-page-grid, 
+    #tvshows-page-grid {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 15px !important;
+        justify-content: center !important;
+        padding: 0 4% !important;
+    }
+
+    #movies-page-grid .movie-card,
+    #tvshows-page-grid .movie-card {
+        width: calc(33.33% - 10px) !important;
+        min-width: 150px !important; 
+        height: 230px !important;
+    }
+
+   
+    #movies-page-grid .movie-card,
+    #tvshows-page-grid .movie-card {
+        width: calc(50% - 8px) !important; 
+        min-width: 130px !important;
+        height: 200px !important; 
+        border-radius: 8px !important;
+    }
+
+    .category-pill {
+        padding: 6px 14px !important;
+        font-size: 0.8rem !important;
+    }

@@ -1,0 +1,90 @@
+<nav class="navbar">
+    <div class="nav-container">
+        <button class="hamburger-menu-btn" id="mobile-menu-bar">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="logo">
+            <a href="index.html">CINEWAVE</a>
+        </div>
+
+        <ul class="nav-links" id="nav-links-menu">
+            <li><a href="index.html" class="active" id="nav-home">Home</a></li>
+            <li><a href="movies.html" id="nav-movies">Movies</a></li>
+            <li><a href="tvshow.html" id="nav-tvshows">TV Shows</a></li>
+            <li><a href="mylist.html" id="nav-mylist">My List</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <div class="search-box">
+                <input type="text" placeholder="Search movies...">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            </div>
+            
+            <button class="signin-btn">Sign In</button>
+            
+            <div id="user-profile-wrapper" style="display: none; align-items: center; gap: 15px;">
+                <div class="user-avatar" id="nav-user-avatar">P</div>
+                <button class="logout-btn" id="nav-logout-trigger" title="Logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+<div id="auth-modal" class="modal-overlay">
+    <div class="auth-container">
+        <button class="auth-close-btn">&times;</button>
+        
+        <div class="auth-tabs">
+            <button class="tab-btn active" id="tab-signin">Sign In</button>
+            <button class="tab-btn" id="tab-signup">Create Account</button>
+        </div>
+
+        <div class="auth-box">
+            <h2 id="auth-heading">Welcome back</h2>
+            <p id="auth-subheading">Sign in to continue streaming.</p>
+
+            <form id="universal-auth-form" novalidate>
+                <div class="form-group" id="group-fullname" style="display: none;">
+                    <label for="auth-fullname">Full Name</label>
+                    <input type="text" id="auth-fullname" autocomplete="off" placeholder="Enter your full name">
+                    <span class="error-msg" id="fullname-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="auth-email">Email</label>
+                    <input type="email" id="auth-email" autocomplete="off" placeholder="Enter your email">
+                    <span class="error-msg" id="email-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="auth-password" id="label-password">Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="auth-password" placeholder="Enter your password">
+                        <i class="fa-regular fa-eye toggle-password-visibility" id="toggle-pwd"></i>
+                    </div>
+                    <span class="error-msg" id="password-error"></span>
+                </div>
+
+                <div class="form-group" id="group-confirm" style="display: none;">
+                    <label for="auth-confirm">Confirm Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="auth-confirm" placeholder="Confirm your password">
+                        <i class="fa-regular fa-eye toggle-password-visibility" id="toggle-confirm-pwd"></i>
+                    </div>
+                    <span class="error-msg" id="confirm-error"></span>
+                </div>
+
+                <button type="submit" class="auth-submit-btn">
+                    <i class="fa-solid fa-right-to-bracket" id="submit-icon"></i> 
+                    <span id="submit-text">Sign In</span>
+                </button>
+            </form>
+
+            <p class="auth-footer-text" id="auth-footer-toggle">
+                New here? <span class="switch-link">Create an account</span>
+            </p>
+        </div>
+    </div>
+</div>

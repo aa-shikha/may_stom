@@ -1028,22 +1028,32 @@ function openDetailsModal(title, clickedCardImgSrc) {
 
     if (tvShowsPageGrid) {
         
-        const tvShowsList = [
-            { title: "Breaking Bad", poster: "Breaking bad.jpg" },
-            { title: "Money Heist", poster: "money heist.jpg" },
-            { title: "The Witcher", poster: "The witcher.jpg" },
-            { title: "The Family Man", poster: "The family man.jpg" },
-            { title: "Mirzapur", poster: "mirzapur.jpg" },
-            { title: "Peaky Blinders", poster: "peaky blinders.jpg" },
-            { title: "The Mandalorian", poster: "The mandalorian.jpg" },
-            { title: "Scam 1992", poster: "Scam 1992.jpg" },
-            { title: "Game of Thrones", poster: "gane of thrones.jpg" },
-            { title: "Off Campus", poster: "off_campus.jpg" },
-            { title: "Wednesday", poster: "wednesday.jpg" },
-            { title: "Alice in Borderland", poster: "alice.jpg" },
-            { title: "All of Us Are Dead", poster: "all of us.webp" },
-            { title: "From", poster: "from.jpg" },
-            { title: "Stranger Things", poster: "Stranger Things.jpg" }
+        // Exact 24 Unique Movies Dataset List (FIXED CASE-SENSITIVITY)
+        const moviesList24 = [
+            { title: "Inception", poster: "Inception.webp" }, 
+            { title: "The Dark Knight", poster: "the dark knight.webp" },
+            { title: "Interstellar", poster: "interstellar.webp" },
+            { title: "Avengers: Endgame", poster: "Avengers.webp" }, 
+            { title: "Oppenheimer", poster: "Oppenheimer.webp" },    
+            { title: "Dune: Part Two", poster: "Dune.webp" },           
+            { title: "Kalki 2898 AD", poster: "kalki.jpg" },
+            { title: "Blade Runner 2049", poster: "Blade.webp" },       
+            { title: "Avatar: The Way of Water", poster: "Avatar.jpg" }, 
+            { title: "3 Idiots", poster: "3 idiots.jpg" },
+            { title: "Dangal", poster: "Dangal.jpg" },                   
+            { title: "RRR", poster: "RRR.jpg" },
+            { title: "Pathaan", poster: "Pathan.jpg" },
+            { title: "Jawan", poster: "Jawan.webp" },
+            { title: "Gangubai Kathiawadi", poster: "gangu.jpg" },
+            { title: "Fighter", poster: "fighter.jpg" },
+            { title: "O'Romeo", poster: "romeo.jpg" },
+            { title: "12th Fail", poster: "12th.jpg" },
+            { title: "Dhurandhar", poster: "dhurnder.jpg" },
+            { title: "Mad Max: Fury Road", poster: "mad_max.jpg" },
+            { title: "John Wick", poster: "john_wick.jpg" },
+            { title: "Mission: Impossible - Fallout", poster: "mission.jpg" },
+            { title: "Tenet", poster: "tenet.webp" },
+            { title: "Arrival", poster: "arrival.webp" }
         ];
 
         function renderTVShowsPage(filterGenre = "all") {

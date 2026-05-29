@@ -1692,22 +1692,22 @@ body {
     display: flex !important;
     flex-wrap: wrap !important;
     gap: 20px !important; 
-    justify-content: flex-start !important; /* Aligns items neatly from left */
+    justify-content: flex-start !important; 
     padding: 0 4% !important;
     margin-bottom: 50px !important;
 }
 
-/* 🔥 THE FIX: Combined layout properties without min-width bugs */
+/*  THE FIX: Combined layout properties without min-width bugs */
 #movies-page-grid .movie-card,
 #tvshows-page-grid .movie-card {
     position: relative !important;
     display: flex !important;
     flex-direction: column !important;
-    width: calc(25% - 15px) !important; /* Fixed exactly 4 columns on standard desktop */
-    min-width: 0 !important; /* 🔥 Purane 200px wale jhanjhat ko jad se mita diya */
-    aspect-ratio: 2 / 3 !important; /* Netflix-style standard vertical poster ratio */
+    width: calc(25% - 15px) !important; 
+    min-width: 0 !important; 
+    aspect-ratio: 2 / 3 !important; 
     border-radius: 12px !important; 
-    overflow: hidden !important; /* Dynamic image cropping safety box */
+    overflow: hidden !important; 
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4) !important;
     background: #141414 !important;
     transition: all 0.25s ease;
@@ -1734,8 +1734,9 @@ body {
     transform: translateY(-5px) !important;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6) !important;
 }
+
 /* ==========================================================================
-    MOBILE & TABLET RESPONSIVE NAVBAR & AUTH CODE LAYER
+    MOBILE & TABLET RESPONSIVE NAVBAR & AUTH CODE LAYER (SWAPPED LAYOUT)
    ========================================================================== */
 
 .hamburger-menu-btn {
@@ -1751,25 +1752,20 @@ body {
 }
 .hamburger-menu-btn:hover { color: #ff0000; }
 
-/*  1. TABLET LAYOUT ADJUSTMENTS */
+/* 1. TABLET LAYOUT ADJUSTMENTS */
 @media (max-width: 1024px) {
     .nav-links { gap: 20px; }
     .nav-links a { font-size: 16px; }
     .search-box input { width: 150px; }
 }
 
-/*  2. MOBILE & SMALL TABLET BREAKPOINT (Max width: 768px) */
+/* 2. MOBILE & SMALL TABLET BREAKPOINT (Max width: 768px) */
 @media (max-width: 768px) {
-    .hamburger-menu-btn {
-        display: block !important;
-        position: relative;
-        z-index: 2005;
-        padding: 5px;
-    }
-
+    
     .nav-container {
-        padding: 10px 4% !important; 
+        padding: 12px 5% !important; 
         display: flex !important;
+        flex-direction: row !important;     
         align-items: center !important;
         justify-content: space-between !important; 
         width: 100%;
@@ -1777,21 +1773,44 @@ body {
         position: relative;
     }
 
+   
     .logo {
-        position: absolute !important;
-        left: 36% !important; 
-        top: 50% !important;
-        transform: translate(-50%, -50%) !important;
+        position: static !important; 
+        transform: none !important;
         margin: 0 !important;
         z-index: 2001;
+        order: 1 !important; 
     }
     .logo a { font-size: 22px; font-weight: 800; }
 
-    /* HAMBURGER DRAWER ENGINE */
+    .nav-right { 
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        gap: 24px !important; 
+        margin-left: auto !important; 
+        padding-right: 0 !important;  
+        margin-right: 0 !important; 
+        z-index: 2001;
+        position: relative;
+        order: 2 !important; 
+    }
+
+    /*  HAMBURGER BUTTON: Default execution ab Right Control Bar ke andar space lega */
+    .hamburger-menu-btn {
+        display: block !important;
+        position: relative;
+        z-index: 2005;
+        padding: 5px;
+        order: 3 !important; 
+    }
+
+    /*  HAMBURGER DRAWER ENGINE (RIGHT SIDE SLIDE FIX) */
     .nav-links {
         position: fixed;
         top: 0;
-        left: -100%; 
+        right: -100%;            
+        left: auto !important;  
         width: 260px;
         height: 100vh;
         background-color: #0f0f14 !important; 
@@ -1799,30 +1818,20 @@ body {
         padding: 90px 30px;
         gap: 20px;
         z-index: 2000 !important; 
-        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 5px 0 25px rgba(0, 0, 0, 0.9);
+        transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.9);     
     }
-    .nav-links.open { left: 0 !important; }
-    .nav-links a { font-size: 18px; display: block; width: 100%; padding: 8px 0; }
-    .nav-right { 
-        display: flex !important;
-        align-items: center !important;
-        justify-content: flex-end !important;
-        gap: 15px !important; 
-        margin-left: auto !important; 
-        
-       
-        padding-right: 25px !important;  
-        margin-right: 10px !important; 
-        
-        z-index: 2001;
-        position: relative;
+    
+    .nav-links.open { 
+        right: 0 !important; 
+        left: auto !important;
     }
-  /* Mobile Search Layout Setup */
+    /*  MOBILE SEARCH LAYOUT SETUP */
     .search-box {
         display: flex;
         align-items: center;
         position: relative;
+        order: 1 !important; 
     }
 
     .search-box input {
@@ -1841,7 +1850,7 @@ body {
 
     .search-box input.active-expand,
     .search-box input:focus {
-        width: 85px !important;
+        width: 165px !important;
         background: rgba(255, 255, 255, 0.12) !important;
         border: 1px solid #ff0000 !important;
         padding-left: 28px !important;
@@ -1862,22 +1871,38 @@ body {
         z-index: 2; 
     }
 
-    /* Siblings element state sync selector rules */
     .search-box input.active-expand + .search-icon,
     .search-box input:focus + .search-icon {
         left: 8px !important;
         color: #ff0000 !important;
     }
+
     .signin-btn {
         padding: 6px 14px;
         font-size: 13px;
         white-space: nowrap; 
         border-radius: 20px;
+        order: 2 !important; 
     }
-    /* ==========================================================================
-   🔥 AUTH MODAL ABSOLUTE CENTERING SYSTEM (FIXED FOR ALL VIEWS)
-   ========================================================================== */
 
+    /*  HERO SLIDER ADJUSTMENTS */
+    .hero-slider, .hero-slide { height: 65vh !important; min-height: 450px; }
+    .hero-content h1 { font-size: 2rem !important; }
+    .hero-content p { font-size: 0.85rem !important; line-height: 1.4; }
+}
+
+/* 3. ULTRA SMALL PHONES CONFIGURATION (Max width: 480px) */
+@media (max-width: 480px) {
+    .logo a { font-size: 19px; }
+    .nav-container { padding: 10px 4% !important; }
+    .nav-right { gap: 10px !important; }
+    .signin-btn { padding: 6px 10px; font-size: 11px; }
+    .user-avatar { width: 30px; height: 30px; font-size: 0.95rem; }
+}
+
+/* ==========================================================================
+    AUTH MODAL ABSOLUTE CENTERING SYSTEM (FIXED FOR ALL VIEWS)
+   ========================================================================== */
 #auth-modal.modal-overlay {
     position: fixed !important;
     top: 0 !important;
@@ -1886,20 +1911,16 @@ body {
     height: 100vh !important;
     background-color: rgba(0, 0, 0, 0.85) !important;
     z-index: 9999 !important; 
-    
-    /* Dynamic Centering Frame Matrix */
     display: none; 
     justify-content: center !important;
     align-items: center !important;
     box-sizing: border-box !important;
 }
 
-/* Jab framework status .open toggle karega to forcefully center flex layout chalega */
 #auth-modal.modal-overlay.open {
     display: flex !important;
 }
 
-/* Container Engine System - Fits inside view frames perfectly */
 .auth-container {
     background-color: #1a1a24 !important;
     border-radius: 12px !important;
@@ -1909,155 +1930,20 @@ body {
     position: relative !important;
     box-shadow: 0 8px 32px rgba(0,0,0,0.6) !important;
     box-sizing: border-box !important;
-    
-    /* Margin issues reset */
     margin: 0 !important; 
     transform: none !important;
     max-height: 85vh;
     overflow-y: auto;
 }
 
-/* 📱 2. MOBILE SPECIFIC OVERRIDES (Max width: 768px) */
 @media (max-width: 768px) {
-    #auth-modal.modal-overlay {
-        padding: 15px !important;
-    }
-    
-    .auth-container {
-        max-width: 340px !important; 
-        padding: 20px !important;
-    }
-}
-
-/*  3. ULTRA SMALL PHONES (Max width: 480px) */
-@media (max-width: 480px) {
-    .auth-container {
-        max-width: 300px !important; 
-        padding: 15px 18px !important;
-    }
-}
-    /* HERO SLIDER FIXED */
-    .hero-slider, .hero-slide { height: 65vh !important; min-height: 450px; }
-    .hero-content h1 { font-size: 2rem !important; }
-    .hero-content p { font-size: 0.85rem !important; line-height: 1.4; }
-}
-
-/*  3. ULTRA SMALL SCREEN CONFIGURATIONS */
-@media (max-width: 480px) {
-    
-    .logo {
-        left: 35% !important;
-    }
-    .logo a { font-size: 19px; }
-    .nav-container { padding: 10px 4%; }
-    
-    .nav-right { 
-        gap: 12px !important; 
-        padding-right: 10px !important; 
-        margin-right: 70px !important;
-    }
-    .signin-btn { padding: 6px 12px; font-size: 12px; }
-    .user-avatar { width: 30px; height: 30px; font-size: 0.95rem; }
-   
-}
-/* ==========================================================================
-   📱 RESPONSIVE MEDIA QUERIES (BOTTOM OF THE FILE)
-   ========================================================================== */
-
-.hamburger-menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 1.5rem;
-    cursor: pointer;
-    outline: none;
-    z-index: 2005;
-}
-
-@media (max-width: 768px) {
-    .hamburger-menu-btn { display: block !important; position: relative; padding: 5px; }
-
-    .nav-container {
-        padding: 10px 4% !important; 
-        display: flex !important;
-        align-items: center !important;
-        justify-content: space-between !important; 
-        width: 100%;
-        box-sizing: border-box;
-        position: relative;
-    }
-
-    .logo {
-        position: absolute !important;
-        left: 46% !important; 
-        top: 50% !important;
-        transform: translate(-50%, -50%) !important;
-        margin: 0 !important;
-        z-index: 2001;
-    }
-    .logo a { font-size: 22px; font-weight: 800; }
-
-    .nav-links {
-        position: fixed;
-        top: 0;
-        left: -100%; 
-        width: 260px;
-        height: 100vh;
-        background-color: #0f0f14 !important; 
-        flex-direction: column; 
-        padding: 90px 30px;
-        gap: 20px;
-        z-index: 2000 !important; 
-        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 5px 0 25px rgba(0, 0, 0, 0.9);
-    }
-    .nav-links.open { left: 0 !important; }
-    .nav-links a { font-size: 18px; display: block; width: 100%; padding: 8px 0; }
-
-    .nav-right { 
-        display: flex !important;
-        align-items: center !important;
-        justify-content: flex-end !important;
-        gap: 15px !important; 
-        margin-left: auto !important; 
-        padding-right: 25px !important;  
-        margin-right: 10px !important;  
-        z-index: 2001;
-        position: relative;
-    }
-    
-    .search-box { display: flex; align-items: center; position: relative; }
-    .search-box input {
-        width: 0px; padding: 6px 0px; background: transparent; border: none;
-        outline: none; color: transparent; cursor: pointer; transition: all 0.25s ease; border-radius: 20px; font-size: 12px;
-    }
-    .search-box input.active-expand, .search-box input:focus {
-        width: 85px !important; background: rgba(255, 255, 255, 0.12) !important;
-        border: 1px solid #ff0000 !important; padding-left: 28px !important; padding-right: 6px !important; color: #fff !important;
-    }
-    .search-icon {
-        position: absolute; left: -15px; font-size: 1.1rem; color: #fff;
-        pointer-events: auto !important; cursor: pointer; transition: all 0.25s ease; display: block !important; z-index: 2;
-    }
-    .search-box input.active-expand + .search-icon, .search-box input:focus + .search-icon { left: 8px !important; color: #ff0000 !important; }
-
-    .signin-btn { padding: 6px 14px; font-size: 13px; white-space: nowrap; border-radius: 20px; }
-    
-    /* Auth Modal Mobile Specific adjustments */
     #auth-modal.modal-overlay { padding: 15px !important; }
     .auth-container { max-width: 340px !important; padding: 20px !important; }
 }
 
 @media (max-width: 480px) {
-    .logo { left: 45% !important; }
-    .logo a { font-size: 19px; }
-    .nav-container { padding: 10px 4%; }
-    .nav-right { gap: 12px !important; padding-right: 20px !important; margin-right: 8px !important; }
-    .signin-btn { padding: 6px 12px; font-size: 12px; }
     .auth-container { max-width: 300px !important; padding: 15px 18px !important; }
 }
-
 /* ==========================================================================
     HERO SLIDER RESPONSIVE BREAKPOINTS (THE ULTIMATE MOBILE FIT)
    ========================================================================== */

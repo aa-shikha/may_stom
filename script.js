@@ -1387,16 +1387,16 @@ document.addEventListener("input", function (e) {
         const allPageSliders = document.querySelectorAll(".movies-section, .plans-section, .reviews-section, .faq-section, .movies-wrapper, #main-mylist-section");
 
         const posterMap = {
-            "Inception": "inception.webp", "The Dark Knight": "the dark knight.webp", "Interstellar": "interstellar.webp",
+            "Inception": "Inception.webp", "The Dark Knight": "the dark knight.webp", "Interstellar": "Interstellar.webp",
             "Avengers: Endgame": "Avengers.webp", "Oppenheimer": "Oppenheimer.webp", "Dune: Part Two": "Dune.webp",
             "Stranger Things": "Stranger Things.jpg", "Spider-Man: No Way Home": "Spider Man.jpg",
-            "Kalki 2898 AD": "kalki.jpg", "Blade Runner 2049": "Blade.webp", "Avatar: The Way of Water": "avatar.jpg",
-            "3 Idiots": "3 idiots.jpg", "Dangal": "dangal.jpg", "RRR": "RRR.jpg", "Pathaan": "pathan.jpg",
-            "Jawan": "jawan.webp", "Gangubai Kathiawadi": "gangu.jpg", "Fighter": "fighter.jpg",
+            "Kalki 2898 AD": "kalki.jpg", "Blade Runner 2049": "Blade.webp", "Avatar: The Way of Water": "Avatar.jpg",
+            "3 Idiots": "3 idiots.jpg", "Dangal": "Dangal.jpg", "RRR": "RRR.jpg", "Pathaan": "Pathan.jpg",
+            "Jawan": "Jawan.webp", "Gangubai Kathiawadi": "gangu.jpg", "Fighter": "fighter.jpg",
             "O'Romeo": "romeo.jpg", "12th Fail": "12th.jpg", "Dhurandhar": "dhurnder.jpg",
-            "Breaking Bad": "Breaking bad.jpg", "Money Heist": "money heist.jpg", "The Witcher": "The witcher.jpg",
-            "The Family Man": "The family man.jpg", "Mirzapur": "mirzapur.jpg", "Peaky Blinders": "peaky blinders.jpg",
-            "The Mandalorian": "The mandalorian.jpg", "Scam 1992": "Scam 1992.jpg", "Game of Thrones": "gane of thrones.jpg",
+            "Breaking Bad": "Breaking bad.jpg", "Money Heist": "money heist.jpg", "The Witcher": "The Witcher.jpg",
+            "The Family Man": "the family man.jpg", "Mirzapur": "mirzapur.jpg", "Peaky Blinders": "peaky blinders.jpg",
+            "The Mandalorian": "The mandalorian.jpg", "Scam 1992": "Scam 1992.jpg", "Game of Thrones": "Gane of thrones.jpg",
             "Off Campus": "off_campus.jpg", "Wednesday": "wednesday.jpg", "Alice in Borderland": "alice.jpg",
             "All of Us Are Dead": "all of us.webp", "From": "from.jpg", "Mad Max: Fury Road": "mad_max.jpg", 
             "John Wick": "john_wick.jpg", "Mission: Impossible - Fallout": "mission.jpg", "Tenet": "tenet.webp", 

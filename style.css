@@ -1850,7 +1850,7 @@ body {
 
     .search-box input.active-expand,
     .search-box input:focus {
-        width: 165px !important;
+        width: 134px !important;
         background: rgba(255, 255, 255, 0.12) !important;
         border: 1px solid #ff0000 !important;
         padding-left: 28px !important;
